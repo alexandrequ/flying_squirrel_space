@@ -1,0 +1,22 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Quintart;Alexandre ;;;
+FN:Alexandre  Quintart
+ORG:Flying Squirrel
+ADR;TYPE=WORK:
+TITLE:Aerspace Engineer
+TEL;TYPE=CELL:+32470051328
+TEL;TYPE=WORK:
+TEL;TYPE=HOME:
+TEL;TYPE=MSG:
+EMAIL;TYPE=WORK:alex@flying-squirrel.space
+URL;TYPE=Digital Business Card:
+URL:flying-squirrel.space
+URL;TYPE=Location:https://maps.app.goo.gl/U8svoy7aZYNYwHSG8
+URL;TYPE=WhatsApp:https://wa.me/+32470051328
+URL;TYPE=Website:flying-squirrel.space
+URL;TYPE=LinkedIn:https://linkedin.com/www.linkedin.com/in/alexandre-quintart-439a2211b
+KEY;TYPE=PGP;ENCODING=b:
+NOTE:
+UID:EnBizCard-100843756
+END:VCARD

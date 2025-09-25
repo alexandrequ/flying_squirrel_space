@@ -1,0 +1,9 @@
+# OS/build artifacts
+.DS_Store
+*.log
+
+# Large binaries we do NOT want in Git
+arcjetCV/**/*.exe
+arcjetCV/**/*.dmg
+arcjetCV/**/*.app
+arcjetCV/**/Contents/MacOS/*

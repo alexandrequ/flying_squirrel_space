@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flying Squirrel Downloads</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Ensure the path is correct -->
+
+    <style>
+        .container {
+            max-width: 600px;
+            padding-top: 50px;
+        }
+        .logo {
+            max-width: 200px;
+            margin: 0 auto;
+            display: block;
+        }
+        .download-link {
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            background-color: #788DA0;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            box-shadow: none !important;
+        }
+        .download-link:hover,
+        .download-link:focus {
+            background-color: #5a6f82;
+            box-shadow: none !important;
+        }
+        .section-spacing {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <img src="logo/arcjetCV_logo_new.png" alt="Flying Squirrel Logo" class="logo mb-4">
+        <h1 class="mb-4">Download arcjetCV</h1>
+        <p class="lead">For Windows:</p>
+        
+        <div class="row g-3">
+            <div class="col-12">
+                <a href="https://flying-squirrel.space/arcjetCV/Windows/arcjetCV_cpu.exe" download class="download-link btn btn-primary btn-lg w-100">arcjetCV Windows for CPU</a>
+            </div>
+            <div class="col-12">
+                <a href="https://flying-squirrel.space/arcjetCV/Windows/arcjetCV_gpu.exe" download class="download-link btn btn-primary btn-lg w-100">arcjetCV Windows for GPU</a>
+            </div>
+        </div>
+
+        <!-- Spacing before the macOS section -->
+        <p class="lead section-spacing">For macOS:</p>
+        
+        <div class="row g-3">
+            <div class="col-12">
+                <a href="https://flying-squirrel.space/arcjetCV/macOS/arcjetCV.dmg" download class="download-link btn btn-primary btn-lg w-100">arcjetCV macOS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (for responsiveness) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
