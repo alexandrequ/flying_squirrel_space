@@ -1,21 +1,24 @@
-name: Deploy to LWS via FTP
+name: Deploy via FTP
+
 on:
   push:
-    branches: [ main ]   # or main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    permissions:
+      contents: read
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}        # e.g. ftp.flying-squirrel.space
-          username: ${{ secrets.FTP_USERNAME }}    # e.g. flyin1815335
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./                            # folder to upload
-          server-dir: /                            # remote web root (often / or /www/)
-          dangerous-clean-slate: false             # set true only if you want to wipe remote
+          protocol: ftps
+          local-dir: ./dist
+          server-dir: /public_html/
