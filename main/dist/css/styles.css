@@ -8757,13 +8757,11 @@ fieldset:disabled .btn {
 }
 
 .bg-img {
-  --bs-bg-opacity: 1;
-  background-image: url('./assets/img/header-space.jpg');
+  background-image: url('../assets/img/header-space.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  "
-
+  background-position: center;
 }
 
 .bg-secondary {

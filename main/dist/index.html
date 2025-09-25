@@ -3,617 +3,569 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Flying Squirrel - Elevate the Horizon</title>
-    <!-- Favicon -->
+    <meta name="description" content="Flying Squirrel blends aerospace engineering, software, and data science to deliver end-to-end hypersonic and thermal protection solutions.">
+    <meta name="author" content="Flying Squirrel">
+    <title>Flying Squirrel &middot; Elevate the Horizon</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <!-- Font Awesome icons (free version) -->
     <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <!-- Core theme CSS (includes Bootstrap) -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Lato:300,400,700&display=swap" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet">
-    <link href="./assets/img/header-space.jpg" rel="header-bg">
+    <link href="css/custom.css" rel="stylesheet">
 </head>
 <body id="page-top">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" aria-label="Primary navigation">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/fs_logo_band.png" width="140" height="60" alt=""></a>
+            <a class="navbar-brand" href="#page-top" aria-label="Flying Squirrel home">
+                <img src="assets/img/fs_logo_band.png" width="140" height="60" alt="Flying Squirrel logo">
+            </a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                  
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Projects</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#projects">Projects</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#capabilities">Capabilities</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                    
-                      <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#publications">Publications</a></li> 
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#publications">Publications</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#clients">Clients</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Masthead -->
-    <header class="masthead bg-img text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <!-- Masthead Avatar Image -->
-            <img class="masthead-avatar mb-5" src="assets/img/fs_logo.png" alt="...">
-            <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0">Flying Squirrel</h1>
-            <!-- {% comment %} <p class="masthead-subheading font-weight-light mb-0">Sky isn't the limit</p> {% endcomment %} -->
-            <!-- Icon Divider -->
-            <div class="divider-custom divider-light">
-                <div class="divider-custom-line"></div>
-               <!-- <div class="divider-custom-icon"><i class="fa-solid fa-satellite"></i></div>
-                <div class="divider-custom-line"></div>-->
+
+    <header class="masthead bg-img text-white text-center hero" role="banner">
+        <div class="hero-overlay"></div>
+        <div class="container d-flex align-items-center flex-column position-relative">
+            <img class="masthead-avatar mb-4" src="assets/img/fs_logo.png" alt="Flying Squirrel emblem">
+            <h1 class="masthead-heading text-uppercase mb-3">Flying Squirrel</h1>
+            <p class="lead mb-4">Advanced aerospace engineering, data-driven software, and mission-ready materials expertise built for hypersonic flight.</p>
+            <div class="d-flex flex-column flex-md-row gap-3 mb-5">
+                <a class="btn btn-primary btn-xl" href="#projects">Explore Projects</a>
+                <a class="btn btn-outline-light btn-xl" href="#contact">Start a Conversation</a>
             </div>
-            <!-- Masthead Subheading -->
-            <p class="masthead-subheading font-weight-light mb-0">Aerospace Engineering Solutions</p>
+            <div class="row gy-4 hero-highlights">
+                <div class="col-sm-4">
+                    <div class="highlight-card">
+                        <i class="fa-solid fa-rocket highlight-icon"></i>
+                        <h3 class="h5 mb-1">Hypersonic Insight</h3>
+                        <p class="small mb-0">Machine learning pipelines that extract actionable results from complex arc jet test campaigns.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="highlight-card">
+                        <i class="fa-solid fa-microchip highlight-icon"></i>
+                        <h3 class="h5 mb-1">Integrated Tooling</h3>
+                        <p class="small mb-0">Custom software ecosystems that connect mission design, materials modeling, and lab automation.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="highlight-card">
+                        <i class="fa-solid fa-users-gear highlight-icon"></i>
+                        <h3 class="h5 mb-1">AI-Augmented Delivery</h3>
+                        <p class="small mb-0">We build AI tooling that plugs into test facilities, streamlining operations while keeping missions aligned from concept through validation.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
-    <!-- Portfolio Section -->
-    <section class="page-section portfolio" id="portfolio">
+
+    <section class="page-section" id="projects">
         <div class="container">
-            <!-- Portfolio Section Heading -->
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projects</h2>
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class "divider-custom-icon"><i class="fa-solid fa-list-check"></i></div>
-                <div class="divider-custom-line"></div>
+            <div class="text-center">
+                <h2 class="page-section-heading text-uppercase text-secondary mb-3">Projects</h2>
+                <p class="section-lead">Flagship platforms translating lab insights into deployable, reliable aerospace software and hardware systems.</p>
             </div>
-            <!-- Portfolio Grid Items -->
-            <div class="row justify-content-center">
-                <!-- Portfolio Item 1 -->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6 col-lg-4">
+                    <article class="project-card h-100">
+                        <div class="project-card__logo">
+                            <img src="assets/img/portfolio/arcjetCV_logo.png" alt="arcjetCV logo" class="img-fluid">
                         </div>
-                        <img class="img-fluid" src="assets/img/portfolio/arcjetCV_logo.png" alt="...">
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">arcjetCV</h3>
+                            <p class="project-card__summary">Computer vision platform that automates recession, shock standoff, and instrumentation analysis from arc jet footage.</p>
+                            <ul class="project-card__tags">
+                                <li>Computer Vision</li>
+                                <li>Hypersonics</li>
+                                <li>Automation</li>
+                            </ul>
+                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalArcjet">Learn More</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="project-card h-100">
+                        <div class="project-card__logo">
+                            <img src="assets/img/portfolio/starscan_logo.png" alt="STARscan logo" class="img-fluid">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">STARscan</h3>
+                            <p class="project-card__summary">Custom photogrammetry rig that captures 3D geometries of test articles in minutes with sub-millimeter accuracy.</p>
+                            <ul class="project-card__tags">
+                                <li>Photogrammetry</li>
+                                <li>Automation</li>
+                                <li>Data Integrity</li>
+                            </ul>
+                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalSTARscan">Learn More</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="project-card h-100">
+                        <div class="project-card__logo">
+                            <img src="assets/img/portfolio/tomosam_logo.png" alt="TomoSAM logo" class="img-fluid">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">TomoSAM</h3>
+                            <p class="project-card__summary">Open-source 3D Slicer extension that brings Segment Anything to volumetric tomography workflows.</p>
+                            <ul class="project-card__tags">
+                                <li>3D Segmentation</li>
+                                <li>Open Source</li>
+                                <li>Medical Imaging</li>
+                            </ul>
+                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalTomoSAM">Learn More</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="project-card h-100">
+                        <div class="project-card__logo">
+                            <img src="assets/img/portfolio/dao.png" alt="DAO-TPM logo" class="img-fluid">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">DAO-TPM</h3>
+                            <p class="project-card__summary">Python framework that links mission design, material response, and optimization to accelerate TPS development.</p>
+                            <ul class="project-card__tags">
+                                <li>Thermal Protection</li>
+                                <li>Optimization</li>
+                                <li>Software Platform</li>
+                            </ul>
+                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalDAO">Learn More</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="project-card h-100">
+                        <div class="project-card__logo">
+                            <img src="assets/img/portfolio/time_seg_logo.png" alt="MultiTraces logo" class="img-fluid">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">MultiTraces</h3>
+                            <p class="project-card__summary">1D CNN that segments multi-test video archives to pinpoint events worth post-processing across long campaigns.</p>
+                            <ul class="project-card__tags">
+                                <li>AI Pipeline</li>
+                                <li>Time-series</li>
+                                <li>Operations</li>
+                            </ul>
+                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalMultiTraces">Learn More</button>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <article class="project-card h-100">
+                        <div class="project-card__logo">
+                            <img src="assets/img/portfolio/arcbeast-logo.svg" alt="ARC BEAST logo" class="img-fluid">
+                        </div>
+                        <div class="project-card__body">
+                            <h3 class="project-card__title">BEAST</h3>
+                            <p class="project-card__summary">Big-data Efficient and Automated Science Transfer platform modernizing arc jet data stewardship for NASA Ames.</p>
+                            <ul class="project-card__tags">
+                                <li>Data Platform</li>
+                                <li>Automation</li>
+                                <li>FAIR Data</li>
+                            </ul>
+                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalBEAST">Learn More</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section bg-light" id="capabilities">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="page-section-heading text-uppercase text-secondary mb-3">Capabilities</h2>
+                <p class="section-lead">We pair domain expertise with modern software practices to streamline complex aerospace workflows.</p>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <i class="fa-solid fa-brain feature-card__icon"></i>
+                        <h3 class="h5">Applied AI &amp; Analytics</h3>
+                        <p class="mb-0">Design, train, and deploy models that unlock high-fidelity insights from noisy thermal and optical data.</p>
                     </div>
                 </div>
- 
-                <!-- Portfolio Item 4 -->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/tomosam_logo.png" alt="...">
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <i class="fa-solid fa-cubes feature-card__icon"></i>
+                        <h3 class="h5">Toolchain Integration</h3>
+                        <p class="mb-0">Connect lab instrumentation, mission simulators, and design toolkits into cohesive, automated pipelines.</p>
                     </div>
                 </div>
-                  <!-- Portfolio Item 5 -->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioSTARscan">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/starscan_logo.png" alt="...">
-                    </div>
-                </div>
-                               <!-- Portfolio Item 2 -->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/dao.png" alt="...">
-                    </div>
-                </div>
-                <!-- Portfolio Item 3 -->
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/time_seg_logo.png" alt="...">
+                <div class="col-md-4">
+                    <div class="feature-card h-100">
+                        <i class="fa-solid fa-shield-halved feature-card__icon"></i>
+                        <h3 class="h5">TPS Strategy</h3>
+                        <p class="mb-0">Analyze, prototype, and validate thermal protection materials with traceable, data-backed decision support.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!-- About Section -->
 
-    <section class="page-section bg-secondary text-white mb-0" id="about">
+    <section class="page-section bg-secondary text-white" id="about">
         <div class="container">
-
-            <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-  
+            <div class="text-center">
+                <h2 class="page-section-heading text-uppercase mb-3">About</h2>
+            </div>
             <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-solid fa-earth-americas"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-           
-            <p align="justify"> Welcome to Flying Squirrel, your destination for innovative aerospace engineering solutions. </p>
-<p align="justify">
-           We specialize in advanced software development and technological innovations aimed at optimizing aerospace materials and processes. Our flagship projects include arcjetCV for automated arc jet test analysis, DAO-TPM for thermal protection material optimization, and Slicer TomoSAM for 3D image processing.
-</p>
-<p align="justify">
-Our commitment is to push the boundaries of aerospace technology, providing state-of-the-art solutions that enhance performance and reliability. Join us in elevating the horizon of aerospace engineering.
-</p>
-           <!-- <div class="text-center mt-4">
-                <a class="btn btn-xl btn-outline-light" href="https://flying-squirrel.space/main/dist/assets/CV_AQuintart.pdf">
-                    <i class="fa-regular fa-file"></i>
-                    Resume
-                </a>
-            </div>-->
-        </div>
-    </section>
- 
-    <!-- Publications Section -->
-<!-- Publications Section -->
-<section class="page-section" id="publications">
-    <div class="container">
-        <!-- Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Publications</h2>
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-
-        <!-- Publications List -->
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <ul class="list-unstyled">
-
-                                    <!-- Publication 2 -->
-                    <li class="mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold text-primary mb-2">
-                                    TomoSAM: A 3D Slicer Extension Using SAM for Tomography Segmentation
-                                </h5>
-                                    <h5 class="mb-2">
-    <span class="badge bg-secondary">2025</span>
-</h5>
-                                <p class="mb-1"><strong>Authors:</strong> Federico Semeraro, Alexandre Quintart, Sergio Fraile Izquierdo, Joseph C. Ferguson</p>
-                                <p class="mb-3"><strong>Published:</strong> SoftwareX</p>
-                                <a href="https://doi.org/10.1016/j.softx.2025.102218" target="_blank" class="btn btn-outline-primary">
-                                    <i class="fas fa-file-pdf me-1"></i>View Publication
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-
-                    
-                    <!-- Publication 1 -->
-                    <li class="mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold text-primary mb-2">
-                                    arcjetCV: An Open-Source Software to Analyze Material Ablation
-                                
-                                </h5>
-                                    <h5 class="mb-2">
-    <span class="badge bg-secondary">2025</span>
-</h5>
-                                <p class="mb-1"><strong>Authors:</strong> Alexandre Quintart, Magnus Haw, Federico Semeraro</p>
-                                <p class="mb-3"><strong>Published:</strong> Journal of Spacecraft and Rockets</p>
-                                <a href="https://doi.org/10.2514/1.A36132" target="_blank" class="btn btn-outline-primary">
-                                    <i class="fas fa-file-pdf me-1"></i>View Publication
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-
-
-                    <!-- Publication 3 -->
-                    <li class="mb-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title fw-bold text-primary mb-2">
-                                    ArcjetCV: A New ML Application for Time-Resolved Recession from Arc Jet Videos
-                                </h5>
-                                <h5 class="mb-2">
-    <span class="badge bg-secondary">2023</span>
-</h5>
-                                <p class="mb-1"><strong>Authors:</strong> Alexandre Quintart and Magnus A. Haw</p>
-                                <p class="mb-3"><strong>Published:</strong> AIAA SCITECH 2023 Forum</p>
-                                <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2023-1912" target="_blank" class="btn btn-outline-primary">
-                                    <i class="fas fa-file-pdf me-1"></i>View Publication
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
+            <div class="row justify-content-center text-start">
+                <div class="col-lg-9">
+                    <p>Flying Squirrel is a multidisciplinary aerospace engineering studio led by Alexandre Quintart. We combine test facility experience, mission design, and modern software practices to solve high-stakes hypersonic and re-entry challenges.</p>
+                    <p>Our teams thrive at the intersection of research and deployment: translating prototype algorithms into resilient tooling, instrumenting labs for automated acquisition, and shaping material characterization programs that accelerate certification.</p>
+                    <p>From NASA research collaborations to partnerships with leading research institutes, we support projects where precision, repeatability, and insight matter most.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
- 
-    <!-- Contact Section -->
-<section class="page-section bg-secondary text-white mb-0" id="contact">
-    <div class="container">
-
-        <!-- Contact Section Heading-->
-                <div class="text-center">
-                    <h2 class="page-section-heading text-secondary text-white d-inline-block mb-0">CONTACT</h2>
-                </div>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fa-regular fa-address-card"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Content-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-4">
-                        <div class="d-flex flex-column align-items-center">
-                            <div class="icon-contact mb-3"><i class="fas fa-mobile-alt"></i></div>
-                            <div class="text-muted">Phone</div>
-                                <div class="lead font-weight-bold">
-                            <a href="tel:+41767830669" class="text-white">+41 767 83 06 69</a>
-                            </div>
-                            <div class="lead font-weight-bold">
-                            <a href="tel:+16046741353" class="text-white">+1 604 674 1353</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="d-flex flex-column align-items-center">
-                            <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
-                            <div class="text-muted">Email</div><a class="lead font-weight-bold" style="color: #fff;"href="mailto:alex@flying-squirrel.space">alex@flying-squirrel.space</a>
-                        </div>
-                    </div>
-                </div>
-    </div>
-</section>
-
-    <!-- Contact Section -->
-    <!--
-    <section class="page-section bg-primary text-white mb-0"  id="contact">
+    <section class="page-section" id="publications">
         <div class="container">
+            <div class="text-center">
+                <h2 class="page-section-heading text-uppercase text-secondary mb-3">Publications</h2>
+                <p class="section-lead">Peer-reviewed work that underpins our methodologies and open-source contributions.</p>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-10">
+                    <article class="publication-card">
+                        <div class="publication-card__header">
+                            <span class="badge bg-secondary">2025</span>
+                            <h3 class="h5 mb-0">TomoSAM: A 3D Slicer Extension Using SAM for Tomography Segmentation</h3>
+                        </div>
+                        <p class="mb-1"><strong>Authors:</strong> Federico Semeraro, Alexandre Quintart, Sergio Fraile Izquierdo, Joseph C. Ferguson</p>
+                        <p class="mb-2"><strong>Published in:</strong> SoftwareX</p>
+                        <a href="https://doi.org/10.1016/j.softx.2025.102218" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-file-pdf me-1"></i>View Publication
+                        </a>
+                    </article>
 
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact</h2>
+                    <article class="publication-card">
+                        <div class="publication-card__header">
+                            <span class="badge bg-secondary">2025</span>
+                            <h3 class="h5 mb-0">arcjetCV: An Open-Source Software to Analyze Material Ablation</h3>
+                        </div>
+                        <p class="mb-1"><strong>Authors:</strong> Alexandre Quintart, Magnus Haw, Federico Semeraro</p>
+                        <p class="mb-2"><strong>Published in:</strong> Journal of Spacecraft and Rockets</p>
+                        <a href="https://doi.org/10.2514/1.A36132" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-file-pdf me-1"></i>View Publication
+                        </a>
+                    </article>
 
+                    <article class="publication-card">
+                        <div class="publication-card__header">
+                            <span class="badge bg-secondary">2023</span>
+                            <h3 class="h5 mb-0">ArcjetCV: A New ML Application for Time-Resolved Recession from Arc Jet Videos</h3>
+                        </div>
+                        <p class="mb-1"><strong>Authors:</strong> Alexandre Quintart, Magnus A. Haw</p>
+                        <p class="mb-2"><strong>Presented at:</strong> AIAA SCITECH Forum</p>
+                        <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2023-1912" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-file-pdf me-1"></i>View Publication
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="clients">
+        <div class="container">
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-3">Clients</h2>
             <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa-solid fa-handshake"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="row align-items-center justify-content-center g-4 clients-grid">
+                <div class="col-6 col-md-3 text-center">
+                    <a href="https://www.vki.ac.be/" class="client-logo" target="_blank" rel="noopener">
+                        <img src="assets/vki_logo.png" alt="Von Karman Institute" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <a href="https://www.nasa.gov/thermal-protection-materials-branch/" class="client-logo" target="_blank" rel="noopener">
+                        <img src="assets/Nasa_grey.png" alt="NASA" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <a href="https://www.ama-inc.com/" class="client-logo" target="_blank" rel="noopener">
+                        <img src="assets/AMA_grey.png" alt="Analytical Mechanics Associates" class="img-fluid">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section bg-secondary text-white" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="page-section-heading text-uppercase mb-3">Contact</h2>
+            </div>
+            <div class="divider-custom divider-light">
                 <div class="divider-custom-line"></div>
                 <div class="divider-custom-icon"><i class="fa-regular fa-address-card"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
+            <div class="row gy-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <i class="fa-solid fa-comments contact-card__icon"></i>
+                        <h3 class="h5">Email</h3>
+                        <p class="mb-2">Share mission goals, collaboration ideas, or media requests.</p>
+                        <a class="stretched-link" href="mailto:alex@flying-squirrel.space">alex@flying-squirrel.space</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <i class="fa-solid fa-phone contact-card__icon"></i>
+                        <h3 class="h5">Phone</h3>
+                        <p class="mb-2">Direct line for rapid project coordination.</p>
+                        <div><a href="tel:+41767830669">+41&nbsp;767&nbsp;83&nbsp;06&nbsp;69</a></div>
+                        <div><a href="tel:+16046741353">+1&nbsp;604&nbsp;674&nbsp;1353</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card h-100">
+                        <i class="fa-solid fa-location-dot contact-card__icon"></i>
+                        <h3 class="h5">Location</h3>
+                        <p class="mb-0">36 Rue du Bourg<br>1946 Bourg-St-Pierre<br>Switzerland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="row justify-content-center">
-    <div class="col-lg-8 col-xl-7">
-        <div class="text-center"> 
-            <button class="btn btn-primary btn-xl" id="emailButton">Send a email</button>
-        </div>
-    </div>
-</div>
-        </div>
-    </section> 
--->
-<!-- Clients -->
-<section class="page-section" id="clients">
-    <div class="container">
-        <h4 class="page-section-heading text-center text-uppercase">Clients</h4>
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fa-solid fa-earth-americas"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
+    <footer class="footer text-white">
         <div class="container">
-            <div class="row align-items-center align-middle justify-content-around">
-
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="https://www.nasa.gov/thermal-protection-materials-branch/">
-                        <img class="img-fluid img-brand d-block mx-auto logo-hover" src="assets/Nasa_grey.png" style="width: 50%;" alt="Nasa Logo">
-                    </a>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="assets/img/fs_logo_band.png" alt="Flying Squirrel wordmark" class="footer-logo">
+                    <p class="mb-0">Aerospace engineers building data-rich tooling for hypersonic testing and thermal protection breakthroughs.</p>
                 </div>
-
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="https://www.vki.ac.be/">
-                        <img class="img-fluid img-brand d-block mx-auto logo-hover" src="assets/vki_logo.png" style="width: 100%;" alt="VKI Logo">
-                    </a>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Stay Connected</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:alex@flying-squirrel.space">alex@flying-squirrel.space</a></li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:+41767830669">+41&nbsp;767&nbsp;83&nbsp;06&nbsp;69</a></li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:+16046741353">+1&nbsp;604&nbsp;674&nbsp;1353</a></li>
+                    </ul>
                 </div>
-                
-                <div class="col-md-3 col-sm-6 my-3">
-                    <a href="https://www.ama-inc.com/">
-                        <img class="img-fluid img-brand d-block mx-auto logo-hover" src="assets/AMA_grey.png" style="width: 50%;" alt="AMA Logo">
-                    </a>
+                <div class="footer-social">
+                    <h4 class="footer-heading">Follow Our Work</h4>
+                    <p class="footer-social__text">Lab automation notes, mission analytics drops, and open-source releases.</p>
+                    <div class="footer-social__list">
+                        <a class="footer-social__link" href="https://github.com/AlexandreQuintart" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="footer-social__link" href="https://www.linkedin.com/in/alexandrequintart/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-fw fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright text-white">
+        <div class="container">
+            <small>&copy; 2025 Flying Squirrel &middot; Alexandre Quintart</small>
+        </div>
+    </div>
 
-
+    <div class="portfolio-modal modal fade" id="portfolioModalArcjet" tabindex="-1" aria-labelledby="portfolioModalArcjet" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/arcjetCV_logo.png" alt="arcjetCV badge" style="max-width:200px;">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">arcjetCV</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <p class="modal-copy text-start">Arc jet Computer Vision (arcjetCV) streamlines analysis of high-speed footage from hypersonic ground tests. Automated pipelines track recession, sting motion, and shock standoff distance, removing manual processing bottlenecks and increasing repeatability. The software couples convolutional neural networks, decision trees, and unsupervised clustering to isolate meaningful signal from high-noise environments.</p>
+                                <p class="modal-copy text-start">The graphical interface guides operators through data ingestion, time-series visualization, and export. The resulting analytics have been used to reveal non-linear ablation effects and reduce uncertainty across modeling and validation campaigns.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</section>
-<!-- Footer -->
-<footer class="footer text-center bg-secondary">
-    <div class="container">
-        <div class="row">
-            <!-- Footer Location -->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4"><i class="fa-solid fa-location-dot"></i> Location</h4>
-                <p class="lead mb-0">
-                    36 Rue du Bourg
-                    <br>
-                    1946 Bourg-St-Pierre 
-                    <br>
-                    SWITZERLAND
-                </p>
-            </div>
-            <!-- Footer Social Icons -->
-            <div class="col-lg-4 mb-5 mb-lg-0">
-                <h4 class="text-uppercase mb-4"><i class="fa-solid fa-earth-americas"></i> Around the Web</h4>
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fa-brands fa-github"></i></a>
-                <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-            </div>
-            <!-- Footer About Text -->
-            <div class="col-lg-4">
-                <h4 class="text-uppercase mb-4"><i class="fa-regular fa-address-card"></i> Contact</h4>
-                <p class="lead mb-0">
-                    <div class="valign-wrapper lead mb-"><i class="fa-solid fa-phone"></i> <a href="tel:+41 767 83 06 69" class="text-white">+41 767 83 06 69</a></div>
-                    <div class="valign-wrapper lead mb-"><i class="fa-solid fa-phone"></i> <a href="tel:+16046741353" class="text-white">+1 604 674 1353</a></div>
-                    <div class="valign-wrapper lead mb-"><i class="fa-regular fa-envelope"></i> alex@flying-squirrel.space</div>
-                </p>
+
+    <div class="portfolio-modal modal fade" id="portfolioModalSTARscan" tabindex="-1" aria-labelledby="portfolioModalSTARscan" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/starscan_logo.png" alt="STARscan badge" style="max-width:200px;">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">STARscan</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <p class="modal-copy text-start">Spatial Targeting and Alignment Rig for Scanning (STARscan) is a custom 3D scanning system engineered for arcjet test article workflows. Purpose-built hardware and photogrammetry reconstruction deliver full-body scans in under two minutes with 0.5&nbsp;mm accuracy, dramatically reducing turnaround between pre- and post-test inspections.</p>
+                                <p class="modal-copy text-start">STARscan addresses data management and security considerations with structured capture protocols and repeatable alignment routines. The approach blends open-source tooling with bespoke automation to scale to large campaigns.</p>
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/starscan.jpg" alt="STARscan rig" style="max-width:320px;">
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</footer>
 
-    <!-- Copyright Section -->
-    <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Copyright &copy; Flying Squirrel - Alexandre Quintart 2025</small></div>
+    <div class="portfolio-modal modal fade" id="portfolioModalTomoSAM" tabindex="-1" aria-labelledby="portfolioModalTomoSAM" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/tomosam_logo.png" alt="TomoSAM badge" style="max-width:200px;">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">TomoSAM</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <p class="modal-copy text-start">TomoSAM extends Meta's Segment Anything Model to volumetric tomography within the 3D Slicer ecosystem. The plug-in accelerates segmentation workflows for complex CT and MR datasets, delivering consistent results across research and clinical teams.</p>
+                                <p class="modal-copy text-start">The project demonstrates Flying Squirrel's commitment to open-source collaboration and reproducibility in tooling that benefits both aerospace materials research and medical imaging communities.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
 
-          <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/arcjetCV_logo.png" alt="..." style="width: 200px; height: auto;"/>
-                                    <!-- Portfolio Modal - Text-->
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">arcjetCV</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        
-                                    </div>
-                                    
-                                    <p align="justify"> Arc jet Computer Vision (ArcjetCV) is a software application built to automate analysis of arc jet ground test video footage. This includes tracking material recession, sting arm motion, and the shock-material standoff distance. This provides a new capability to resolve and validate new physics associated with non-linear processes. This is an essential step to reduce testing, modeling, and validation uncertainties for heatshield material performance. 
+    <div class="portfolio-modal modal fade" id="portfolioModalDAO" tabindex="-1" aria-labelledby="portfolioModalDAO" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/dao.png" alt="DAO-TPM badge" style="max-width:200px;">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">DAO-TPM</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <p class="modal-copy text-start">Design, Analysis, and Optimization of Thermal Protection Materials (DAO-TPM) links mission design, aerothermal environments, and TPS microstructure modeling in a cohesive Python framework. The toolkit, complete with a graphical interface, enables rapid scenario exploration and decision-making for atmospheric entry challenges.</p>
+                                <p class="modal-copy text-start">Leveraging MEDLI in-flight datasets and extensible simulation blocks, DAO-TPM equips teams to evaluate material performance and iterate on architectures with confidence.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-ArcjetCV uses several types of machine learning (convolutional neural net: CNN, decision tree: DT, k-means unsupervised clustering: KM) to automate the video processing pipeline. These include inferring the start/stop of time segments of interest (1D CNN), measuring the time-dependent 2D recession of the material samples (2D CNN, DT), measuring the time-dependent shock standoff distance (2D CNN, DT), and post-processing cleaning of the recession data (KM). The software also provides a graphical user interface for ease of use. The results of using this tool on arc jet videos show non-linear time-dependent effects can be important for certain materials. </p>
-                                      <div>
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/arcjet_video.gif" alt="Additional Image" />
-</div> <a href="https://github.com/magnus-haw/arcjetCV" target="_blank" class="btn btn-primary">
-                                    <i class="fab fa-github fa-fw"></i>
-                                    View on GitHub
+    <div class="portfolio-modal modal fade" id="portfolioModalBEAST" tabindex="-1" aria-labelledby="portfolioModalBEAST" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/arcbeast-logo.svg" alt="ARC BEAST badge" style="max-width:200px;">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">BEAST</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <p class="modal-copy text-start">Big-data Efficient and Automated Science Transfer (BEAST) is an open-source data infrastructure developed for the NASA Ames arc jet facilities. The platform replaces fragmented lab data practices with a unified system that synchronizes video, time-series measurements, and metadata to accelerate downstream analysis.</p>
+                                <p class="modal-copy text-start">Built on Python’s Django framework and the broader data science stack, BEAST operationalizes the FAIR principles—making arc jet datasets findable, accessible, interoperable, and reusable. Automated ingestion pipelines, role-tailored dashboards, and machine learning hooks streamline experiment turnaround and unlock cross-test insights for researchers and operators alike.</p>
+                                <a class="btn btn-outline-primary mb-3" href="https://ntrs.nasa.gov/citations/20220018664" target="_blank" rel="noopener">
+                                    <i class="fas fa-file-pdf me-1"></i>Read the NASA AIAA SciTech Paper
                                 </a>
                                 <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/dao.png" alt="..." style="width: 200px; height: auto;" />
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">DAO-TPM</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
+    </div>
 
-                                    </div>
-                                    
-                                    <!-- Portfolio Modal - Text-->
-                                    <p align="justify"> The Mars Science Laboratory (MSL) was protected during its Mars
-atmospheric entry by an instrumented heatshield that used NASA's Phenolic
-Impregnated Carbon Ablator (PICA) [1]. PICA is a lightweight carbon
-fiber/polymeric resin material that offers excellent performances for
-protecting probes during planetary entry. The Mars Entry Descent and
-Landing Instrument (MEDLI) suite on MSL offers unique in-flight validation
-data for models of atmospheric entry and material response. MEDLI
-recorded, among others, time-resolved in-depth temperature data of PICA
-using thermocouple sensors assembled in the MEDLI Integrated Sensor Plugs
-(MISP). The objective of this work is to showcase the capability of the
-Design, Analysis, and Optimization of Thermal Protection Materials (DAOTPM) software. DAO-TPM is a Python based framework that works as a link
-between mission design, aerothermal and radiative environment computation,
-Thermal Protection Systems (TPS) microstructure analysis, material response
-and optimization tools. The toolbox has a Graphical User Interface (GUI) that
-allows the user to build as well as run the various software and utilities used
-to design, analyze and optimize a heatshield during atmospheric entry</p>
-                                   <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
+    <div class="portfolio-modal modal fade" id="portfolioModalMultiTraces" tabindex="-1" aria-labelledby="portfolioModalMultiTraces" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-9">
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/time_seg_logo.png" alt="MultiTraces badge" style="max-width:200px;">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">MultiTraces</h2>
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
                                 </div>
+                                <p class="modal-copy text-start">MultiTraces adapts the arcjetCV time segmentation engine to quickly identify relevant sequences across full-day test recordings. By analyzing brightness traces with a 1D CNN, the system flags sample insertions and other events that warrant operator review.</p>
+                                <p class="modal-copy text-start">The tooling reduces manual browsing effort, shortens turnaround between tests, and maintains a traceable log of campaign highlights.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <i class="fas fa-xmark fa-fw"></i>
+                                    Close Window
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                 <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/time_seg_logo.png" alt="..." style="width: 200px; height: auto;"/>
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">MultiTraces Segmentation</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                
-                                    </div>
-                                   
-                                    <!-- Portfolio Modal - Text-->
-                                    <p align="justify"  >MultiTraces project is based on the Time segmentation part of ArcjetCV. 
-Time segmentation provide an interesting perspective would be to apply the same method to the raw video that are provided after a day of arc jet tests. Usually several arc jet tests take place during a day and the cameras are recording all day long. <br>
-The insertion of a sample in the arc jet is clearly delectable with the mean brightness trace. MultiTraces is also based on a 1D CNN and detects all the interesting part of the videos.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/tomosam_logo.png" alt="..." style="width: 200px; height: auto;"/>
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Slicer TomoSAM</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                            
-                                    </div>
-                                    
-                                    <!-- Portfolio Modal - Text-->
-                                    <p align="justify">TomoSAM has been developed to integrate the cutting-edge Segment Anything Model (SAM) into 3D Slicer, a highly capable software platform used for 3D image processing and visualization. SAM is a promptable deep learning model that is able to identify objects and create image masks in a zero-shot manner, based only on a few user clicks. The synergy between these tools aids in the segmentation of complex 3D datasets from tomography or other imaging techniques, which would otherwise require a laborious manual segmentation process.</p>
-  <div>
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/tomosam.jpg" alt="Additional Image" />
-</div> <a href="https://github.com/fedesemeraro/SlicerTomoSAM" target="_blank" class="btn btn-primary">
-                                    <i class="fab fa-github fa-fw"></i>
-                                    View on GitHub
-                                </a>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio STARscan-->
-        <div class="portfolio-modal modal fade" id="portfolioSTARscan" tabindex="-1" aria-labelledby="portfolioSTARscan" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                 <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/starscan_logo.png" alt="..." style="width: 200px; height: auto;" />
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">STARscan</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                            
-                                    </div>
-                                   
-                                    <!-- Portfolio Modal - Text-->
-                                    <p align="justify">Spatial Targeting and Alignment Rig for Scanning (STARScan) is a custom 3D scanning system built to accelerate and streamline scanning of arcjet test articles. This scanner should address issues with scanning speed, scan organization, pre/post-test scan alignment, and security issues with scan access. The system provides a faster alternative (2 min scans) to the current handheld laser scanner (15 min scans) with comparable accuracy (0.5 mm). The setup uses a rig of cameras and photogrammetry reconstruction methods, leveraging a variety of open source softwares.</p>
-                                    <div>
-    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/starscan.jpg" alt="Additional Image" style="width: 300px; height: auto;" />
-</div>
+    </div>
 
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-
-            <script>
-        // JavaScript to open the email app
-        document.getElementById("emailButton").addEventListener("click", function () {
-            window.location.href = "mailto:alex@flying-squirrel.space";
-        });
-    </script>
-
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
 </html>
