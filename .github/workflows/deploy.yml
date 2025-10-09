@@ -13,8 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # If you have a build step, uncomment and adapt:
+      # If your dist is already committed, leave this commented.
+      # If you need to build (React/Vite/etc.), uncomment and adapt:
       # - name: Build site
+      #   working-directory: ./main
       #   run: |
       #     npm ci
       #     npm run build
@@ -26,30 +28,13 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
-          # If you build, set this to ./dist or ./build
-          local-dir: ./
-          # ⚠️ Adjust this after confirming your docroot in hosting panel
-          server-dir: /public_html/
+          local-dir: ./main/dist/          # <<--- your built site
+          server-dir: /public_html/         # adjust if your host uses a different docroot
           log-level: verbose
           exclude: |
             **/.git*
             **/.github/**
             **/node_modules/**
             **/.DS_Store
-
-      # Quick remote listing to confirm where files actually landed
-      - name: List remote directory (debug)
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y lftp
-          lftp -e "
-            set ssl:verify-certificate no;
-            open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
-            pwd;
-            ls -la /public_html/;
-            bye
-          "
+          # optional safety if you don't want the action to wipe files outside this upload:
+          # dangerous-clean-slate: false
