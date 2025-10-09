@@ -28,7 +28,7 @@ jobs:
       - name: Try FTPS explicit (ftp.flying-squirrel.space, port 21)
         id: ftps_explicit_domain
         env:
-          FTP_SERVER: ftp.flying-squirrel.space
+          FTP_SERVER: ${{ secrets.SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
@@ -56,7 +56,7 @@ jobs:
         if: failure()  # only if previous step failed
         id: ftps_explicit_host
         env:
-          FTP_SERVER: webdb124.lwspanel.com
+          FTP_SERVER: ${{ secrets.SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
@@ -84,7 +84,7 @@ jobs:
         if: failure()
         id: ftps_implicit
         env:
-          FTP_SERVER: ftp.flying-squirrel.space
+          FTP_SERVER: ${{ secrets.SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
@@ -111,7 +111,7 @@ jobs:
       - name: LAST-RESORT probe via plain FTP (no TLS) to validate connectivity+docroot
         if: failure()
         env:
-          FTP_SERVER: ftp.flying-squirrel.space
+          FTP_SERVER: ${{ secrets.SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
