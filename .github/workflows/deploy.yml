@@ -1,4 +1,4 @@
-name: Build & Deploy to LWS (FTPS)
+name: Build & Deploy to LWS (SFTP password)
 
 on:
   push:
@@ -13,44 +13,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Build your site (outputs to ./main/dist)
+      # Build your site -> outputs to ./main/dist
       - name: Build
         working-directory: ./main
         run: |
           npm ci
           npm run build
+          # probe file to verify on the web
+          echo "deployed $(date -u)" > ./dist/deployed.txt
 
-      # Deploy the built files to your LWS docroot
-      - name: Deploy via FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      # SFTP upload (password-based)
+      - name: Upload via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: ./main/dist/
-          server-dir: /www/
-          log-level: verbose
-          exclude: |
-            **/.git*
-            **/.github/**
-            **/node_modules/**
-            **/.DS_Store
+          server: ${{ secrets.SFTP_HOST }}          # e.g. webdb124.lwspanel.com
+          port: 22
+          username: ${{ secrets.SFTP_USER }}        # e.g. flyin1815335
+          password: ${{ secrets.SFTP_PASSWORD }}    # your LWS FTP/SFTP password
+          local_path: ./main/dist/
+          remote_path: /htdocs/
+          args: "-rz"                                # rsync-like flags
 
-      # Optional: confirm files landed in /www
-      - name: List /www (debug)
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      # Debug: list /htdocs via SFTP to confirm files landed
+      - name: List remote /htdocs (debug)
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y lftp
-          lftp -e "
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
-            set ssl:verify-certificate no;
-            open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
-            ls -la /www/;
-            bye
-          "
+          sudo apt-get install -y sshpass
+          sshpass -p "${{ secrets.SFTP_PASSWORD }}" \
+            sftp -P 22 -o StrictHostKeyChecking=no "${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}" << 'EOF'
+            ls -la /htdocs/
+            EOF
