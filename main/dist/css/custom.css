@@ -1,0 +1,330 @@
+/* Custom styles for the refreshed Flying Squirrel site */
+
+.hero {
+    position: relative;
+    padding-top: 11rem;
+    padding-bottom: 6rem;
+    overflow: hidden;
+}
+
+.hero .container {
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(12, 21, 35, 0.55) 0%, rgba(12, 21, 35, 0.72) 50%, rgba(12, 21, 35, 0.82) 100%);
+}
+
+.hero-highlights {
+    margin-top: 1rem;
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.25rem;
+    height: 100%;
+    backdrop-filter: blur(6px);
+}
+
+.highlight-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--bs-primary);
+}
+
+.section-lead {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--bs-gray-700);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(18, 38, 63, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(18, 38, 63, 0.14);
+}
+
+.project-card__logo {
+    background: var(--bs-light);
+    padding: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 180px;
+}
+
+.project-card__logo img[alt~="BEAST"] {
+    max-height: 160px;
+}
+
+.project-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.75rem;
+}
+
+.project-card__title {
+    margin-bottom: 0;
+}
+
+.project-card__summary {
+    flex-grow: 1;
+    color: var(--bs-gray-700);
+}
+
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.project-card__tags li {
+    background: rgba(var(--bs-primary-rgb), 0.12);
+    color: var(--bs-primary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 2rem 1.75rem;
+    box-shadow: 0 12px 30px rgba(12, 21, 35, 0.08);
+}
+
+.feature-card__icon {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--bs-primary);
+}
+
+.publication-card {
+    border-radius: 1rem;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(18, 38, 63, 0.08);
+}
+
+.modal-copy {
+    color: var(--bs-gray-700);
+}
+
+.publication-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .publication-card__header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .publication-card__header .badge {
+        margin-right: 0.75rem;
+    }
+}
+
+.clients-grid img {
+    max-height: 80px;
+    transition: transform 0.2s ease;
+}
+
+.clients-grid img:hover {
+    transform: scale(1.05);
+}
+
+.contact-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 2rem 1.75rem;
+    height: 100%;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card a {
+    color: #fff;
+    font-weight: 600;
+}
+
+.contact-card__icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--bs-primary);
+}
+
+.btn-social {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #152437 0%, #1d2f45 60%, #24384f 100%);
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: -140px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(120, 141, 160, 0.22) 0%, rgba(120, 141, 160, 0) 70%);
+    opacity: 0.6;
+}
+
+.footer-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.footer-logo {
+    max-width: 180px;
+    margin-bottom: 1rem;
+}
+
+.footer p {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-heading {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    font-weight: 600;
+}
+
+.footer-contact i {
+    color: var(--bs-primary);
+}
+
+.footer-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-social__text {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+}
+
+.footer-social__list {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-social__link {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-social__link:hover {
+    transform: translateY(-3px);
+    border-color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.copyright {
+    background-color: #101a26;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.copyright small {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.portfolio-modal .text-muted {
+    color: var(--bs-gray-700) !important;
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        padding-top: 9rem;
+        padding-bottom: 4rem;
+    }
+
+    .project-card__logo {
+        min-height: 150px;
+    }
+}
+
+@media (min-width: 992px) {
+    .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .footer-contact li {
+        justify-content: flex-start;
+    }
+}
