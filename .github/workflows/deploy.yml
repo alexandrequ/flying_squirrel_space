@@ -1,4 +1,4 @@
-name: Build & Deploy to LWS (SFTP password)
+name: Build & Deploy to LWS (FTPS via lftp)
 
 on:
   push:
@@ -13,33 +13,51 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Build your site -> outputs to ./main/dist
       - name: Build
         working-directory: ./main
         run: |
           npm ci
           npm run build
-          # probe file to verify on the web
           echo "deployed $(date -u)" > ./dist/deployed.txt
 
-      # SFTP upload (password-based)
-      - name: Upload via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
-        with:
-          server: ${{ secrets.SFTP_HOST }}          # e.g. webdb124.lwspanel.com
-          port: 22
-          username: ${{ secrets.SFTP_USER }}        # e.g. flyin1815335
-          password: ${{ secrets.SFTP_PASSWORD }}    # your LWS FTP/SFTP password
-          local_path: ./main/dist/
-          remote_path: /htdocs/
-          args: "-rz"                                # rsync-like flags
-
-      # Debug: list /htdocs via SFTP to confirm files landed
-      - name: List remote /htdocs (debug)
+      - name: Install lftp
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y sshpass
-          sshpass -p "${{ secrets.SFTP_PASSWORD }}" \
-            sftp -P 22 -o StrictHostKeyChecking=no "${{ secrets.SFTP_USER }}@${{ secrets.SFTP_HOST }}" << 'EOF'
-            ls -la /htdocs/
-            EOF
+          sudo apt-get install -y lftp
+
+      # Upload dist -> /htdocs using explicit FTPS (TLS on port 21)
+      - name: Mirror to /htdocs (FTPS)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}       # e.g. ftp.flying-squirrel.space  (try this first)
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}   # e.g. flyin1815335
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}   # your LWS password
+        run: |
+          lftp -e "
+            set ftp:passive-mode true;
+            set net:max-retries 2;
+            set net:timeout 30;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate no;
+            open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
+            mkdir -p /htdocs;
+            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ./main/dist /htdocs;
+            bye
+          "
+
+      # Debug: list remote dir so you SEE the files
+      - name: List /htdocs (debug)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -e "
+            set ftp:passive-mode true;
+            set ftp:ssl-force true;
+            set ftp:ssl-protect-data true;
+            set ssl:verify-certificate no;
+            open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
+            ls -la /htdocs/;
+            bye
+          "
