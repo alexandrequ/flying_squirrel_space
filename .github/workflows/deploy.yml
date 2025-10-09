@@ -1,4 +1,4 @@
-name: Build & Deploy to LWS (FTPS via lftp)
+name: Build & Deploy to LWS (robust FTPS)
 
 on:
   push:
@@ -25,39 +25,110 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y lftp
 
-      # Upload dist -> /htdocs using explicit FTPS (TLS on port 21)
-      - name: Mirror to /htdocs (FTPS)
+      - name: Try FTPS explicit (ftp.flying-squirrel.space, port 21)
+        id: ftps_explicit_domain
         env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}       # e.g. ftp.flying-squirrel.space  (try this first)
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}   # e.g. flyin1815335
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}   # your LWS password
+          FTP_SERVER: ftp.flying-squirrel.space
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -e "
-            set ftp:passive-mode true;
-            set net:max-retries 2;
-            set net:timeout 30;
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
+          set -e
+          lftp -c "
+            set cmd:trace on;
+            set net:max-retries 1;
+            set net:reconnect-interval-base 5;
+            set net:timeout 25;
+            set dns:order inet;
+            set ftp:passive-mode on;
+            set ftp:ssl-allow yes;
+            set ftp:ssl-force yes;
+            set ftp:ssl-protect-data yes;
+            set ftp:ssl-auth TLS;
             set ssl:verify-certificate no;
             open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
             mkdir -p /htdocs;
             mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ./main/dist /htdocs;
+            ls -la /htdocs;
             bye
           "
 
-      # Debug: list remote dir so you SEE the files
-      - name: List /htdocs (debug)
+      - name: Try FTPS explicit (webdb host, port 21)
+        if: failure()  # only if previous step failed
+        id: ftps_explicit_host
         env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_SERVER: webdb124.lwspanel.com
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          lftp -e "
-            set ftp:passive-mode true;
-            set ftp:ssl-force true;
-            set ftp:ssl-protect-data true;
+          set -e
+          lftp -c "
+            set cmd:trace on;
+            set net:max-retries 1;
+            set net:reconnect-interval-base 5;
+            set net:timeout 25;
+            set dns:order inet;
+            set ftp:passive-mode on;
+            set ftp:ssl-allow yes;
+            set ftp:ssl-force yes;
+            set ftp:ssl-protect-data yes;
+            set ftp:ssl-auth TLS;
             set ssl:verify-certificate no;
             open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
-            ls -la /htdocs/;
+            mkdir -p /htdocs;
+            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ./main/dist /htdocs;
+            ls -la /htdocs;
             bye
           "
+
+      - name: Try FTPS implicit (port 990) on ftp.flying-squirrel.space
+        if: failure()
+        id: ftps_implicit
+        env:
+          FTP_SERVER: ftp.flying-squirrel.space
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          set -e
+          lftp -c "
+            set cmd:trace on;
+            set net:max-retries 1;
+            set net:reconnect-interval-base 5;
+            set net:timeout 25;
+            set dns:order inet;
+            set ftp:passive-mode on;
+            set ftp:ssl-allow yes;
+            set ftp:ssl-force yes;
+            set ftp:ssl-protect-data yes;
+            set ftp:ssl-auth TLS;
+            set ssl:verify-certificate no;
+            open -p 990 -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
+            mkdir -p /htdocs;
+            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ./main/dist /htdocs;
+            ls -la /htdocs;
+            bye
+          "
+
+      - name: LAST-RESORT probe via plain FTP (no TLS) to validate connectivity+docroot
+        if: failure()
+        env:
+          FTP_SERVER: ftp.flying-squirrel.space
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          set -e
+          echo "WARNING: Using plain FTP for a tiny probe file ONLY to validate connectivity. If this succeeds, FTPS is being blocked by the host firewall."
+          echo "probe $(date -u)" > probe.txt
+          lftp -c "
+            set cmd:trace on;
+            set net:max-retries 1;
+            set net:reconnect-interval-base 5;
+            set net:timeout 25;
+            set dns:order inet;
+            set ftp:passive-mode on;
+            set ssl:verify-certificate no;
+            open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
+            put -O /htdocs probe.txt;
+            ls -la /htdocs;
+            bye
+          "
+          echo "If this step passed, check https://flying-squirrel.space/probe.txt . Then please contact LWS to enable FTPS/port 21 for your account, and we’ll remove this fallback."
