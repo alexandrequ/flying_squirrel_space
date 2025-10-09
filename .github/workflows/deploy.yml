@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      BUILD_DIR: ./main/dist
+      REMOTE_ROOT: /public_html
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
 
     steps:
       - uses: actions/checkout@v4
@@ -28,9 +33,7 @@ jobs:
       - name: Try FTPS explicit (ftp.flying-squirrel.space, port 21)
         id: ftps_explicit_domain
         env:
-          FTP_SERVER: ${{ secrets.SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER: ${{ secrets.FTP_SERVER_DOMAIN }}
         run: |
           set -e
           lftp -c "
@@ -46,9 +49,9 @@ jobs:
             set ftp:ssl-auth TLS;
             set ssl:verify-certificate no;
             open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
-            mkdir -p /htdocs;
-            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ./main/dist /htdocs;
-            ls -la /htdocs;
+            mkdir -p ${REMOTE_ROOT};
+            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ${BUILD_DIR} ${REMOTE_ROOT};
+            ls -la ${REMOTE_ROOT};
             bye
           "
 
@@ -56,9 +59,7 @@ jobs:
         if: failure()  # only if previous step failed
         id: ftps_explicit_host
         env:
-          FTP_SERVER: ${{ secrets.SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER: ${{ secrets.FTP_SERVER_WEBDB }}
         run: |
           set -e
           lftp -c "
@@ -74,9 +75,9 @@ jobs:
             set ftp:ssl-auth TLS;
             set ssl:verify-certificate no;
             open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
-            mkdir -p /htdocs;
-            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ./main/dist /htdocs;
-            ls -la /htdocs;
+            mkdir -p ${REMOTE_ROOT};
+            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ${BUILD_DIR} ${REMOTE_ROOT};
+            ls -la ${REMOTE_ROOT};
             bye
           "
 
@@ -84,9 +85,7 @@ jobs:
         if: failure()
         id: ftps_implicit
         env:
-          FTP_SERVER: ${{ secrets.SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER: ${{ secrets.FTP_SERVER_DOMAIN }}
         run: |
           set -e
           lftp -c "
@@ -102,18 +101,16 @@ jobs:
             set ftp:ssl-auth TLS;
             set ssl:verify-certificate no;
             open -p 990 -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
-            mkdir -p /htdocs;
-            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ./main/dist /htdocs;
-            ls -la /htdocs;
+            mkdir -p ${REMOTE_ROOT};
+            mirror -Rev --parallel=2 --exclude-glob .git* --exclude-glob .github --exclude-glob node_modules ${BUILD_DIR} ${REMOTE_ROOT};
+            ls -la ${REMOTE_ROOT};
             bye
           "
 
       - name: LAST-RESORT probe via plain FTP (no TLS) to validate connectivity+docroot
         if: failure()
         env:
-          FTP_SERVER: ${{ secrets.SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER: ${{ secrets.FTP_SERVER_DOMAIN }}
         run: |
           set -e
           echo "WARNING: Using plain FTP for a tiny probe file ONLY to validate connectivity. If this succeeds, FTPS is being blocked by the host firewall."
@@ -127,8 +124,8 @@ jobs:
             set ftp:passive-mode on;
             set ssl:verify-certificate no;
             open -u ${FTP_USERNAME},${FTP_PASSWORD} ${FTP_SERVER};
-            put -O /htdocs probe.txt;
-            ls -la /htdocs;
+            put -O ${REMOTE_ROOT} probe.txt;
+            ls -la ${REMOTE_ROOT};
             bye
           "
           echo "If this step passed, check https://flying-squirrel.space/probe.txt . Then please contact LWS to enable FTPS/port 21 for your account, and we’ll remove this fallback."
