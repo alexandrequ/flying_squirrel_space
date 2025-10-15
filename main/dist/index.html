@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" aria-label="Primary navigation">
         <div class="container">
             <a class="navbar-brand" href="#page-top" aria-label="Flying Squirrel home">
-                <img src="assets/img/fs_logo_band.png" width="140" height="60" alt="Flying Squirrel logo">
+                <img src="assets/img/flying_squirrel_signature.svg" width="140" height="60" alt="Flying Squirrel logo">
             </a>
             <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -38,9 +38,9 @@
     <header class="masthead bg-img text-white text-center hero" role="banner">
         <div class="hero-overlay"></div>
         <div class="container d-flex align-items-center flex-column position-relative">
-            <img class="masthead-avatar mb-4" src="assets/img/fs_logo.png" alt="Flying Squirrel emblem">
+            <img class="masthead-avatar mb-4" src="assets/img/fs_logo.svg" alt="Flying Squirrel emblem">
             <h1 class="masthead-heading text-uppercase mb-3">Flying Squirrel</h1>
-            <p class="lead mb-4">Aerospace Engineering Solutions.</p>
+            <p class="lead mb-4">Integrated hypersonic software, data, and automation for test teams on tight timelines.</p>
             <div class="d-flex flex-column flex-md-row gap-3 mb-5">
                 <a class="btn btn-primary btn-xl" href="#projects">Explore Projects</a>
                 <a class="btn btn-outline-light btn-xl" href="#contact">Start a Conversation</a>
@@ -62,12 +62,13 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="highlight-card">
-                        <i class="fa-solid fa-users-gear highlight-icon"></i>
+                        <i class="fa-solid fa-brain highlight-icon"></i>
                         <h3 class="h5 mb-1">AI-Augmented Delivery</h3>
                         <p class="small mb-0">We build AI tooling that plugs into test facilities, streamlining operations while keeping missions aligned from concept through validation.</p>
                     </div>
                 </div>
             </div>
+            
         </div>
     </header>
 
@@ -91,7 +92,12 @@
                                 <li>Hypersonics</li>
                                 <li>Automation</li>
                             </ul>
-                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalArcjet">Learn More</button>
+                            <div class="mt-auto d-flex flex-column gap-2">
+                                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalArcjet">Learn More</button>
+                                <a class="btn btn-outline-dark btn-sm" href="https://github.com/magnus-haw/arcjetCV" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i>View on GitHub
+                                </a>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -125,7 +131,12 @@
                                 <li>Open Source</li>
                                 <li>Medical Imaging</li>
                             </ul>
-                            <button class="btn btn-outline-primary btn-sm mt-auto" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalTomoSAM">Learn More</button>
+                            <div class="mt-auto d-flex flex-column gap-2">
+                                <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#portfolioModalTomoSAM">Learn More</button>
+                                <a class="btn btn-outline-dark btn-sm" href="https://github.com/fedesemeraro/SlicerTomoSAM" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i>View on GitHub
+                                </a>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -166,7 +177,7 @@
                 <div class="col-md-6 col-lg-4">
                     <article class="project-card h-100">
                         <div class="project-card__logo">
-                            <img src="assets/img/portfolio/arcbeast-logo.svg" alt="ARC BEAST logo" class="img-fluid">
+                            <img src="assets/img/portfolio/beat_project.svg" alt="BEAST logo" class="img-fluid">
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">BEAST</h3>
@@ -292,20 +303,29 @@
                 <div class="divider-custom-icon"><i class="fa-solid fa-handshake"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div class="row align-items-center justify-content-center g-4 clients-grid">
-                <div class="col-6 col-md-3 text-center">
+            <div class="clients-intro">
+                <p class="clients-intro__text">Trusted by government programs and advanced research labs to translate hypersonic test data into deployable insight.</p>
+            </div>
+            <div class="row justify-content-center g-4 clients-grid">
+                <div class="col-6 col-md-4 col-lg-3">
                     <a href="https://www.vki.ac.be/" class="client-logo" target="_blank" rel="noopener">
                         <img src="assets/vki_logo.png" alt="Von Karman Institute" class="img-fluid">
+                        <span class="client-logo__label">Von Karman Institute</span>
+                        <span class="client-logo__meta">Hypersonic plasmatron campaigns</span>
                     </a>
                 </div>
-                <div class="col-6 col-md-3 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
                     <a href="https://www.nasa.gov/thermal-protection-materials-branch/" class="client-logo" target="_blank" rel="noopener">
                         <img src="assets/Nasa_grey.png" alt="NASA" class="img-fluid">
+                        <span class="client-logo__label">NASA Ames TPM</span>
+                        <span class="client-logo__meta">Arc jet data orchestration</span>
                     </a>
                 </div>
-                <div class="col-6 col-md-3 text-center">
+                <div class="col-6 col-md-4 col-lg-3">
                     <a href="https://www.ama-inc.com/" class="client-logo" target="_blank" rel="noopener">
                         <img src="assets/AMA_grey.png" alt="Analytical Mechanics Associates" class="img-fluid">
+                        <span class="client-logo__label">Analytical Mechanics Associates</span>
+                        <span class="client-logo__meta">Flight data analytics</span>
                     </a>
                 </div>
             </div>
@@ -355,7 +375,7 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-brand">
-                    <img src="assets/img/fs_logo_band.png" alt="Flying Squirrel wordmark" class="footer-logo">
+                    <img src="assets/img/flying_squirrel_signature.svg" alt="Flying Squirrel wordmark" class="footer-logo">
                     <p class="mb-0">Aerospace engineers building data-rich tooling for hypersonic testing and thermal protection breakthroughs.</p>
                 </div>
                 <div class="footer-links">
@@ -404,6 +424,9 @@
                                 </div>
                                 <p class="modal-copy text-start">Arc jet Computer Vision (arcjetCV) streamlines analysis of high-speed footage from hypersonic ground tests. Automated pipelines track recession, sting motion, and shock standoff distance, removing manual processing bottlenecks and increasing repeatability. The software couples convolutional neural networks, decision trees, and unsupervised clustering to isolate meaningful signal from high-noise environments.</p>
                                 <p class="modal-copy text-start">The graphical interface guides operators through data ingestion, time-series visualization, and export. The resulting analytics have been used to reveal non-linear ablation effects and reduce uncertainty across modeling and validation campaigns.</p>
+                                <a class="btn btn-outline-dark btn-sm mb-3" href="https://github.com/magnus-haw/arcjetCV" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i>View arcjetCV on GitHub
+                                </a>
                                 <button class="btn btn-primary" data-bs-dismiss="modal">
                                     <i class="fas fa-xmark fa-fw"></i>
                                     Close Window
@@ -462,6 +485,9 @@
                                     <div class="divider-custom-line"></div>
                                 </div>
                                 <p class="modal-copy text-start">TomoSAM extends Meta's Segment Anything Model to volumetric tomography within the 3D Slicer ecosystem. The plug-in accelerates segmentation workflows for complex CT and MR datasets, delivering consistent results across research and clinical teams.</p>
+                                <a class="btn btn-outline-dark btn-sm mb-3" href="https://github.com/fedesemeraro/SlicerTomoSAM" target="_blank" rel="noopener noreferrer">
+                                    <i class="fab fa-github me-1"></i>View TomoSAM on GitHub
+                                </a>
                                 <p class="modal-copy text-start">The project demonstrates Flying Squirrel's commitment to open-source collaboration and reproducibility in tooling that benefits both aerospace materials research and medical imaging communities.</p>
                                 <button class="btn btn-primary" data-bs-dismiss="modal">
                                     <i class="fas fa-xmark fa-fw"></i>
@@ -514,7 +540,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-9">
-                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/arcbeast-logo.svg" alt="ARC BEAST badge" style="max-width:200px;">
+                                <img class="img-fluid rounded mb-4" src="assets/img/portfolio/beat_project.svg" alt="ARC BEAST badge" style="max-width:200px;">
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">BEAST</h2>
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
