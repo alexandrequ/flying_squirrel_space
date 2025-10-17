@@ -2,7 +2,9 @@
 
 :root {
     --fs-nav-height: 80px;
-    --fs-surface: #f4f7fb;
+    --fs-surface: #e3eaf7;
+    --fs-section-contrast: #ffffff;
+    --fs-heading-font: "Nunito", "Montserrat", "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -28,16 +30,127 @@
     .client-logo:focus {
         transform: translateY(-6px);
     }
+
+    [data-animate] {
+        opacity: 0;
+        transform: var(--animate-transform-initial, translateY(24px));
+        transition: opacity 0.7s ease, transform 0.7s ease;
+        will-change: opacity, transform;
+    }
+
+    [data-animate].animate-in {
+        opacity: 1;
+        transform: none;
+    }
+
+    [data-animate="fade-up"] {
+        --animate-transform-initial: translateY(28px);
+    }
+
+    [data-animate="fade-down"] {
+        --animate-transform-initial: translateY(-28px);
+    }
+
+    [data-animate="fade-left"] {
+        --animate-transform-initial: translateX(-32px);
+    }
+
+    [data-animate="fade-right"] {
+        --animate-transform-initial: translateX(32px);
+    }
+
+    [data-animate="zoom-in"] {
+        --animate-transform-initial: scale(0.9);
+    }
+
+    .hero .masthead-avatar.animate-in {
+        animation: hero-avatar-pop 1.2s ease forwards;
+    }
+
+    .highlight-card.animate-in {
+        animation: card-lift 6s ease-in-out infinite 0.8s;
+    }
+
+    @keyframes hero-avatar-pop {
+        0% {
+            transform: scale(0.9) translateY(24px);
+        }
+        60% {
+            transform: scale(1.03);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes card-lift {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
 }
 
 body {
     background: var(--fs-surface);
 }
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.masthead-heading,
+.page-section-heading,
+.project-card__title,
+.feature-card .h5,
+.publication-card__header h3,
+.client-logo__label,
+.contact-card .h5,
+.footer-heading {
+    font-family: var(--fs-heading-font);
+    font-weight: 700;
+}
+
+#mainNav .navbar-brand,
+#mainNav .nav-link,
+#mainNav .navbar-toggler {
+    font-family: var(--fs-heading-font);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
 .page-section,
 .masthead,
 .footer {
     scroll-margin-top: calc(var(--fs-nav-height) + 24px);
+}
+
+.page-section {
+    background: var(--fs-section-contrast);
+}
+
+.page-section:nth-of-type(even):not([class*="bg-"]) {
+    background: var(--fs-surface);
 }
 
 #mainNav {
