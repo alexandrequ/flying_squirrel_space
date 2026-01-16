@@ -541,6 +541,19 @@ h6,
     height: auto;
 }
 
+.footer-partner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.footer-partner img {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+}
+
 .footer-heading {
     font-size: 1rem;
     letter-spacing: 0.16em;
@@ -550,7 +563,8 @@ h6,
 }
 
 .footer-links,
-.footer-social {
+.footer-social,
+.footer-partner-block {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -634,7 +648,8 @@ h6,
 
     .footer-brand,
     .footer-links,
-    .footer-social {
+    .footer-social,
+    .footer-partner-block {
         align-items: flex-start;
     }
 }
