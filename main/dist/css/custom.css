@@ -684,3 +684,273 @@ h6,
         margin-bottom: 1.5rem;
     }
 }
+
+/* 2026 layout refresh */
+:root {
+    --fs-surface: #f2f4f7;
+    --fs-section-contrast: #fbfcfe;
+    --fs-ink: #111b2e;
+    --fs-muted: #5d6a7c;
+    --fs-deep: #0d1423;
+    --fs-accent: #19a38c;
+    --fs-accent-2: #f58b27;
+    --fs-line: rgba(23, 37, 63, 0.12);
+    --bs-primary: #19a38c;
+    --bs-primary-rgb: 25, 163, 140;
+    --bs-secondary: #122039;
+    --bs-secondary-rgb: 18, 32, 57;
+    --fs-heading-font: "Space Grotesk", "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+    --fs-body-font: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+body {
+    color: var(--fs-ink);
+    font-family: var(--fs-body-font);
+    background:
+        radial-gradient(circle at 8% 10%, rgba(25, 163, 140, 0.13) 0, rgba(25, 163, 140, 0) 45%),
+        radial-gradient(circle at 92% 18%, rgba(245, 139, 39, 0.13) 0, rgba(245, 139, 39, 0) 45%),
+        linear-gradient(180deg, #eef2f8 0%, #f8fafd 100%);
+}
+
+#mainNav {
+    background: rgba(10, 17, 30, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+#mainNav.navbar-shrink {
+    background: rgba(10, 17, 30, 0.92);
+}
+
+#mainNav .nav-link {
+    border-radius: 999px;
+    padding: 0.6rem 1rem !important;
+    letter-spacing: 0.04em;
+}
+
+#mainNav .nav-link:hover,
+#mainNav .nav-link:focus,
+#mainNav .nav-link.active {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.hero {
+    padding-top: calc(var(--fs-nav-height) + 6.5rem);
+    padding-bottom: 7.5rem;
+}
+
+.hero-overlay {
+    background:
+        radial-gradient(circle at 16% 20%, rgba(25, 163, 140, 0.3) 0%, rgba(25, 163, 140, 0) 40%),
+        radial-gradient(circle at 85% 12%, rgba(245, 139, 39, 0.24) 0%, rgba(245, 139, 39, 0) 42%),
+        linear-gradient(175deg, rgba(7, 14, 27, 0.55) 0%, rgba(7, 14, 27, 0.75) 58%, rgba(7, 14, 27, 0.88) 100%);
+}
+
+.masthead-heading {
+    letter-spacing: 0.01em;
+    font-size: clamp(2.5rem, 8vw, 5.2rem);
+}
+
+.hero .lead {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.btn {
+    border-radius: 0.95rem;
+    font-family: var(--fs-heading-font);
+    letter-spacing: 0.01em;
+}
+
+.btn-primary {
+    background: linear-gradient(130deg, var(--fs-accent) 0%, #118b76 100%);
+    border-color: transparent;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(130deg, #22b79f 0%, #14937d 100%);
+    border-color: transparent;
+}
+
+.btn-outline-primary {
+    border-color: rgba(25, 163, 140, 0.45);
+    color: #0f6f60;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background: rgba(25, 163, 140, 0.1);
+    color: #0c5a4e;
+    border-color: rgba(25, 163, 140, 0.7);
+}
+
+.highlight-card {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border-radius: 1.2rem;
+}
+
+.highlight-card p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.highlight-icon {
+    color: #8ce6d8;
+}
+
+.page-section {
+    position: relative;
+    padding: 6rem 0;
+}
+
+.page-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-section:not(.bg-secondary)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, var(--fs-line) 15%, var(--fs-line) 85%, rgba(0, 0, 0, 0) 100%);
+}
+
+.page-section-heading {
+    letter-spacing: 0.015em;
+}
+
+.section-lead {
+    color: var(--fs-muted);
+}
+
+.project-card,
+.feature-card,
+.publication-card,
+.client-logo {
+    border: 1px solid var(--fs-line);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 40px rgba(11, 22, 40, 0.07);
+}
+
+.project-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+}
+
+.project-card__logo {
+    background:
+        radial-gradient(circle at 18% 20%, rgba(25, 163, 140, 0.09) 0%, rgba(25, 163, 140, 0) 46%),
+        radial-gradient(circle at 84% 80%, rgba(245, 139, 39, 0.11) 0%, rgba(245, 139, 39, 0) 46%),
+        #f8fafe;
+}
+
+.project-card__summary,
+.modal-copy,
+.clients-intro__text {
+    color: var(--fs-muted);
+}
+
+.project-card__tags li {
+    background: rgba(25, 163, 140, 0.14);
+    color: #0d6a5b;
+    border: 1px solid rgba(25, 163, 140, 0.24);
+    font-weight: 700;
+}
+
+.feature-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.feature-card__icon {
+    color: #0f7f6c;
+}
+
+#about,
+#contact {
+    background:
+        radial-gradient(circle at 15% 5%, rgba(25, 163, 140, 0.2) 0%, rgba(25, 163, 140, 0) 40%),
+        radial-gradient(circle at 88% 15%, rgba(245, 139, 39, 0.22) 0%, rgba(245, 139, 39, 0) 44%),
+        linear-gradient(145deg, #111b2f 0%, #172844 52%, #20345a 100%);
+}
+
+#about p {
+    color: rgba(243, 247, 255, 0.88);
+    font-size: 1.06rem;
+}
+
+.contact-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.09) 100%);
+    border-color: rgba(255, 255, 255, 0.24);
+    border-radius: 1.25rem;
+}
+
+.contact-card p {
+    color: rgba(240, 247, 255, 0.82);
+}
+
+.contact-card__icon {
+    color: #8ce6d8;
+}
+
+.client-logo {
+    background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+}
+
+.client-logo::after {
+    border-color: rgba(25, 163, 140, 0.26);
+}
+
+.client-logo:hover,
+.client-logo:focus {
+    box-shadow: 0 26px 50px rgba(11, 28, 47, 0.15);
+}
+
+.footer {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(245, 139, 39, 0.22) 0%, rgba(245, 139, 39, 0) 38%),
+        radial-gradient(circle at 12% 12%, rgba(25, 163, 140, 0.2) 0%, rgba(25, 163, 140, 0) 36%),
+        linear-gradient(135deg, #0f1a2e 0%, #172842 50%, #1d3153 100%);
+}
+
+.copyright {
+    background: #0d1628;
+}
+
+@media (max-width: 991.98px) {
+    #mainNav .nav-link {
+        margin-bottom: 0.35rem;
+    }
+
+    .page-section {
+        padding: 5rem 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        padding-top: calc(var(--fs-nav-height) + 3.3rem);
+        padding-bottom: 5rem;
+    }
+
+    .masthead-heading {
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
+    }
+
+    .hero .lead {
+        font-size: 1rem;
+    }
+
+    .highlight-card,
+    .project-card,
+    .feature-card,
+    .publication-card,
+    .client-logo,
+    .contact-card {
+        border-radius: 1rem;
+    }
+}
