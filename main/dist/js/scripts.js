@@ -132,4 +132,21 @@ window.addEventListener('DOMContentLoaded', event => {
         }
     }
 
+    const publicationsToggle = document.getElementById('publicationsToggle');
+    if (publicationsToggle) {
+        const extraPublications = Array.from(document.querySelectorAll('.publication-card--extra'));
+
+        publicationsToggle.addEventListener('click', () => {
+            const isExpanded = publicationsToggle.getAttribute('aria-expanded') === 'true';
+            const nextExpanded = !isExpanded;
+
+            extraPublications.forEach(card => {
+                card.hidden = !nextExpanded;
+            });
+
+            publicationsToggle.setAttribute('aria-expanded', String(nextExpanded));
+            publicationsToggle.textContent = nextExpanded ? 'Show Fewer Publications' : 'Show More Publications';
+        });
+    }
+
 });
