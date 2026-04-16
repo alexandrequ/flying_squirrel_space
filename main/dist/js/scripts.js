@@ -8,6 +8,8 @@
 // 
 
 window.addEventListener('DOMContentLoaded', event => {
+    let scrollSpyInstance = null;
+    let wasNavbarShrunk = null;
 
     // Navbar shrink function
     var navbarShrink = function () {
@@ -15,12 +17,20 @@ window.addEventListener('DOMContentLoaded', event => {
         if (!navbarCollapsible) {
             return;
         }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
+        const isShrunk = window.scrollY !== 0;
+
+        if (isShrunk) {
+            navbarCollapsible.classList.add('navbar-shrink');
         } else {
-            navbarCollapsible.classList.add('navbar-shrink')
+            navbarCollapsible.classList.remove('navbar-shrink');
         }
 
+        if (wasNavbarShrunk !== isShrunk) {
+            wasNavbarShrunk = isShrunk;
+            if (scrollSpyInstance) {
+                scrollSpyInstance.refresh();
+            }
+        }
     };
 
     // Shrink the navbar 
@@ -32,10 +42,23 @@ window.addEventListener('DOMContentLoaded', event => {
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
-        new bootstrap.ScrollSpy(document.body, {
-            target: '#mainNav',
-            offset: 72,
-        });
+        const mountScrollSpy = () => {
+            // Switch active nav state earlier so the visible section heading
+            // (e.g. Publications) matches the highlighted tab.
+            const offset = Math.ceil(mainNav.getBoundingClientRect().height + 140);
+
+            if (scrollSpyInstance) {
+                scrollSpyInstance.dispose();
+            }
+
+            scrollSpyInstance = new bootstrap.ScrollSpy(document.body, {
+                target: '#mainNav',
+                offset,
+            });
+        };
+
+        mountScrollSpy();
+        window.addEventListener('resize', mountScrollSpy);
     };
 
     // Collapse responsive navbar when toggler is visible
