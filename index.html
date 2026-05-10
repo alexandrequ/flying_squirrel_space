@@ -11,6 +11,11 @@
     <link rel="canonical" href="https://flying-squirrel.space/">
     <link rel="alternate" hreflang="en" href="https://flying-squirrel.space/">
     <link rel="alternate" hreflang="x-default" href="https://flying-squirrel.space/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://use.fontawesome.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Flying Squirrel | Aerospace Software, Hypersonics, and TPS Tooling">
     <meta property="og:description" content="Mission-ready software, data systems, and lab automation for hypersonic test campaigns and thermal protection research.">
@@ -25,7 +30,15 @@
     <meta name="twitter:image" content="https://flying-squirrel.space/main/dist/FS_logo_2025.png">
     <meta name="twitter:image:alt" content="Flying Squirrel aerospace engineering logo">
     <meta name="theme-color" content="#0a1422">
-    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFMS1NFJKJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CFMS1NFJKJ');
+    </script>
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js" crossorigin="anonymous" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link href="main/dist/css/styles.css" rel="stylesheet">
     <link href="main/dist/css/custom.css" rel="stylesheet">
@@ -36,9 +49,9 @@
             "@id": "https://flying-squirrel.space/#organization",
             "name": "Flying Squirrel",
             "url": "https://flying-squirrel.space/",
-            "logo": "https://flying-squirrel.space/assets/FS_logo_2025.png",
+            "logo": "https://flying-squirrel.space/main/dist/FS_logo_2025.png",
             "description": "Flying Squirrel blends aerospace engineering, software, and data science to deliver end-to-end hypersonic and thermal protection solutions.",
-            "email": "mailto:alex@flying-squirrel.space",
+            "email": "alex@flying-squirrel.space",
             "telephone": "+41767830669",
             "address": {
                 "@type": "PostalAddress",
@@ -121,9 +134,9 @@
     <header class="masthead bg-img text-white text-center hero" role="banner">
         <div class="hero-overlay"></div>
         <div class="container d-flex align-items-center flex-column position-relative">
-            <img class="masthead-avatar mb-4" src="main/dist/assets/img/FS_bordure.svg" alt="Flying Squirrel emblem">
+            <img class="masthead-avatar mb-4" src="main/dist/assets/img/FS_bordure.svg" alt="Flying Squirrel emblem" width="160" height="160" fetchpriority="high">
             <h1 class="masthead-heading text-uppercase mb-3">Flying Squirrel</h1>
-            <p class="lead mb-4">Mission-ready software, data systems, and lab automation for test campaigns.</p>
+            <p class="lead mb-4">Mission-ready software, data systems, and lab automation for hypersonic test campaigns and thermal protection programs.</p>
             <div class="d-flex flex-column flex-md-row gap-3 mb-5">
                 <a class="btn btn-primary btn-xl" href="#projects">Explore Projects</a>
                 <a class="btn btn-outline-light btn-xl" href="#contact">Start a Conversation</a>
@@ -633,7 +646,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModalArcjet" tabindex="-1" aria-labelledby="portfolioModalArcjet" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModalArcjet" tabindex="-1" aria-labelledby="portfolioModalArcjetTitle" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header border-0">
@@ -644,7 +657,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-9">
                                 <img class="img-fluid rounded mb-4" src="main/dist/assets/img/portfolio/arcjetCV_logo.png" alt="arcjetCV badge" style="max-width:200px;" loading="lazy" decoding="async">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">arcjetCV</h2>
+                                <h2 id="portfolioModalArcjetTitle" class="portfolio-modal-title text-secondary text-uppercase mb-3">arcjetCV</h2>
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
                                 </div>
@@ -670,7 +683,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModalSTARscan" tabindex="-1" aria-labelledby="portfolioModalSTARscan" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModalSTARscan" tabindex="-1" aria-labelledby="portfolioModalSTARscanTitle" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header border-0">
@@ -681,7 +694,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-10">
                                 <img class="img-fluid rounded mb-3 d-block mx-auto" src="main/dist/assets/img/portfolio/starscan_logo.png" alt="STARscan badge" style="max-width:200px;" loading="lazy" decoding="async">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3 text-center">STARscan</h2>
+                                <h2 id="portfolioModalSTARscanTitle" class="portfolio-modal-title text-secondary text-uppercase mb-3 text-center">STARscan</h2>
                                 <div class="divider-custom mb-4">
                                     <div class="divider-custom-line"></div>
                                 </div>
@@ -713,7 +726,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModalTomoSAM" tabindex="-1" aria-labelledby="portfolioModalTomoSAM" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModalTomoSAM" tabindex="-1" aria-labelledby="portfolioModalTomoSAMTitle" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header border-0">
@@ -724,7 +737,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-9">
                                 <img class="img-fluid rounded mb-4" src="main/dist/assets/img/portfolio/tomosam_logo.png" alt="TomoSAM badge" style="max-width:200px;" loading="lazy" decoding="async">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">TomoSAM</h2>
+                                <h2 id="portfolioModalTomoSAMTitle" class="portfolio-modal-title text-secondary text-uppercase mb-3">TomoSAM</h2>
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
                                 </div>
@@ -734,7 +747,7 @@
                                 </a>
                                 <p class="modal-copy text-start">The project demonstrates Flying Squirrel's commitment to open-source collaboration and reproducibility in tooling that benefits both aerospace materials research and medical imaging communities.</p>
                                 <div class="tomosam-modal__media mb-4">
-                                    <img class="img-fluid tomosam-modal__image" src="main/dist/assets/img/portfolio/tomosam.png " alt="TomoSAM segmentation preview" loading="lazy" decoding="async">
+                                    <img class="img-fluid tomosam-modal__image" src="main/dist/assets/img/portfolio/tomosam.png" alt="TomoSAM segmentation preview" loading="lazy" decoding="async">
                                 </div>
                                 <button class="btn btn-primary" data-bs-dismiss="modal">
                                     <i class="fas fa-xmark fa-fw"></i>
@@ -748,7 +761,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModalDAO" tabindex="-1" aria-labelledby="portfolioModalDAO" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModalDAO" tabindex="-1" aria-labelledby="portfolioModalDAOTitle" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header border-0">
@@ -759,7 +772,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-9">
                                 <img class="img-fluid rounded mb-4" src="main/dist/assets/img/portfolio/dao.png" alt="DAO-TPM badge" style="max-width:200px;" loading="lazy" decoding="async">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">DAO-TPM</h2>
+                                <h2 id="portfolioModalDAOTitle" class="portfolio-modal-title text-secondary text-uppercase mb-3">DAO-TPM</h2>
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
                                 </div>
@@ -777,7 +790,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModalBEAST" tabindex="-1" aria-labelledby="portfolioModalBEAST" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModalBEAST" tabindex="-1" aria-labelledby="portfolioModalBEASTTitle" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header border-0">
@@ -788,7 +801,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-9">
                                 <img class="img-fluid rounded mb-4" src="main/dist/assets/img/portfolio/beat_project.svg" alt="ARC BEAST badge" style="max-width:200px;" loading="lazy" decoding="async">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">BEAST</h2>
+                                <h2 id="portfolioModalBEASTTitle" class="portfolio-modal-title text-secondary text-uppercase mb-3">BEAST</h2>
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
                                 </div>
@@ -809,7 +822,7 @@
         </div>
     </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModalMultiTraces" tabindex="-1" aria-labelledby="portfolioModalMultiTraces" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="portfolioModalMultiTraces" tabindex="-1" aria-labelledby="portfolioModalMultiTracesTitle" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header border-0">
@@ -820,7 +833,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-9">
                                 <img class="img-fluid rounded mb-4" src="main/dist/assets/img/portfolio/time_seg_logo.png" alt="MultiTraces badge" style="max-width:200px;" loading="lazy" decoding="async">
-                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-3">MultiTraces</h2>
+                                <h2 id="portfolioModalMultiTracesTitle" class="portfolio-modal-title text-secondary text-uppercase mb-3">MultiTraces</h2>
                                 <div class="divider-custom">
                                     <div class="divider-custom-line"></div>
                                 </div>
