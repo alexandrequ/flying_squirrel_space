@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="10-week master's internship at NASA Ames Research Center working on BEAST — Big-data Efficient Automated Science Transfer for arc-jet facility data.">
+    <meta name="author" content="Flying Squirrel">
+    <meta name="robots" content="index, follow">
+    <title>BEAST Internship — Master's Position at NASA Ames | Flying Squirrel</title>
+    <link rel="icon" type="image/x-icon" href="../main/dist/assets/favicon.ico">
+    <link rel="canonical" href="https://flying-squirrel.space/beast-internship/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://use.fontawesome.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BEAST Internship — Master's Position at NASA Ames | Flying Squirrel">
+    <meta property="og:description" content="10-week master's internship at NASA Ames Research Center: HDF5 data exchange, automated reporting, and ML modeling for arc-jet test campaigns.">
+    <meta property="og:url" content="https://flying-squirrel.space/beast-internship/">
+    <meta property="og:image" content="https://flying-squirrel.space/main/dist/FS_logo_2025.png">
+    <meta property="og:site_name" content="Flying Squirrel">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFMS1NFJKJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CFMS1NFJKJ');
+    </script>
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js" crossorigin="anonymous" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="../main/dist/css/styles.css" rel="stylesheet">
+    <link href="../main/dist/css/custom.css" rel="stylesheet">
+    <style>
+        /* Page-specific overrides */
+        .internship-hero {
+            position: relative;
+            padding-top: calc(var(--fs-nav-height) + 6rem);
+            padding-bottom: 6rem;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(25, 163, 140, 0.28) 0%, rgba(25, 163, 140, 0) 42%),
+                radial-gradient(circle at 88% 15%, rgba(245, 139, 39, 0.22) 0%, rgba(245, 139, 39, 0) 40%),
+                linear-gradient(160deg, #0a1422 0%, #122039 55%, #183050 100%);
+            overflow: hidden;
+        }
+
+        .internship-hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(25, 163, 140, 0.18);
+            border: 1px solid rgba(25, 163, 140, 0.38);
+            color: #8ce6d8;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+        }
+
+        .internship-hero h1 {
+            font-size: clamp(2.2rem, 6vw, 3.8rem);
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .internship-hero h1 span {
+            color: #8ce6d8;
+        }
+
+        .internship-hero .lead {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 700px;
+        }
+
+        .internship-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .internship-meta__item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.92rem;
+            font-weight: 500;
+        }
+
+        .internship-meta__item i {
+            color: #8ce6d8;
+            font-size: 1rem;
+            width: 1.2rem;
+            text-align: center;
+        }
+
+        .task-card {
+            background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+            border: 1px solid var(--fs-line);
+            border-radius: 1.25rem;
+            padding: 2rem 1.75rem;
+            height: 100%;
+            box-shadow: 0 18px 40px rgba(11, 22, 40, 0.07);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .task-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 24px 48px rgba(11, 22, 40, 0.12);
+        }
+
+        .task-card__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: linear-gradient(130deg, var(--fs-accent) 0%, #118b76 100%);
+            color: #fff;
+            font-family: var(--fs-heading-font);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
+        }
+
+        .task-card__weeks {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #0f7f6c;
+            background: rgba(25, 163, 140, 0.12);
+            border: 1px solid rgba(25, 163, 140, 0.22);
+            border-radius: 999px;
+            padding: 0.25rem 0.7rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .task-card h3 {
+            font-size: 1.15rem;
+            color: var(--fs-ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .task-card p {
+            color: var(--fs-muted);
+            margin-bottom: 1rem;
+            font-size: 0.96rem;
+        }
+
+        .task-card ul {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        .task-card ul li {
+            color: var(--fs-muted);
+            font-size: 0.93rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.5;
+        }
+
+        .task-card__deliverable {
+            margin-top: 1.25rem;
+            padding: 0.85rem 1rem;
+            background: rgba(25, 163, 140, 0.07);
+            border-left: 3px solid var(--fs-accent);
+            border-radius: 0 0.5rem 0.5rem 0;
+            font-size: 0.88rem;
+            color: var(--fs-ink);
+        }
+
+        .task-card__deliverable strong {
+            color: #0d6a5b;
+        }
+
+        .timeline-row {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 0 1.5rem;
+            align-items: start;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--fs-line);
+        }
+
+        .timeline-row:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-row__weeks {
+            font-family: var(--fs-heading-font);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--fs-accent);
+            text-align: center;
+            padding-top: 0.15rem;
+        }
+
+        .timeline-row__task {
+            font-weight: 600;
+            color: var(--fs-ink);
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-row__milestone {
+            color: var(--fs-muted);
+            font-size: 0.9rem;
+        }
+
+        .req-card {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            border: 1px solid var(--fs-line);
+            border-radius: 1.25rem;
+            padding: 2rem 1.75rem;
+            height: 100%;
+            box-shadow: 0 18px 40px rgba(11, 22, 40, 0.07);
+        }
+
+        .req-card__icon {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: #0f7f6c;
+        }
+
+        .req-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .req-card ul {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+
+        .req-card ul li {
+            color: var(--fs-muted);
+            font-size: 0.93rem;
+            margin-bottom: 0.4rem;
+            line-height: 1.5;
+        }
+
+        #apply.apply-section {
+            background:
+                radial-gradient(circle at 15% 5%, rgba(25, 163, 140, 0.2) 0%, rgba(25, 163, 140, 0) 40%),
+                radial-gradient(circle at 88% 15%, rgba(245, 139, 39, 0.22) 0%, rgba(245, 139, 39, 0) 44%),
+                linear-gradient(145deg, #111b2f 0%, #172844 52%, #20345a 100%);
+        }
+
+        .apply-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.09) 100%);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 1.25rem;
+            padding: 2rem 1.75rem;
+            color: #fff;
+        }
+
+        .apply-card__icon {
+            font-size: 1.75rem;
+            color: #8ce6d8;
+            margin-bottom: 1rem;
+        }
+
+        .apply-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .apply-card p {
+            color: rgba(240, 247, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .apply-card a {
+            color: #8ce6d8;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .apply-card a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* Application form */
+        .apply-form-wrap {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 1.5rem;
+            padding: 2.5rem 2.25rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .apply-form-wrap label {
+            color: rgba(230,243,255,0.9);
+            font-weight: 600;
+            font-size: 0.88rem;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.35rem;
+        }
+
+        .apply-form-wrap .form-control,
+        .apply-form-wrap .form-select {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 0.8rem;
+            color: #fff;
+            font-size: 0.95rem;
+            padding: 0.7rem 1rem;
+            transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .apply-form-wrap .form-control::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+
+        .apply-form-wrap .form-control:focus,
+        .apply-form-wrap .form-select:focus {
+            background: rgba(255,255,255,0.13);
+            border-color: rgba(140,230,216,0.6);
+            box-shadow: 0 0 0 3px rgba(25,163,140,0.2);
+            color: #fff;
+            outline: none;
+        }
+
+        .apply-form-wrap .form-select option {
+            background: #172844;
+            color: #fff;
+        }
+
+        .apply-form-wrap textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #8ce6d8;
+            margin-bottom: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        #form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        #form-success .success-icon {
+            font-size: 3rem;
+            color: #8ce6d8;
+            margin-bottom: 1rem;
+        }
+
+        #form-success h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        #form-success p {
+            color: rgba(240,247,255,0.75);
+        }
+
+        #form-error-msg {
+            display: none;
+            background: rgba(220,60,60,0.18);
+            border: 1px solid rgba(220,60,60,0.35);
+            border-radius: 0.75rem;
+            color: #ffb3b3;
+            padding: 0.85rem 1.1rem;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* File upload inputs */
+        .file-drop {
+            position: relative;
+            border: 1.5px dashed rgba(255,255,255,0.22);
+            border-radius: 0.8rem;
+            padding: 1.1rem 1rem;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .file-drop:hover,
+        .file-drop:focus-within {
+            border-color: rgba(140,230,216,0.55);
+            background: rgba(255,255,255,0.09);
+        }
+        .file-drop input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+        .file-drop__icon {
+            font-size: 1.3rem;
+            color: #8ce6d8;
+            flex-shrink: 0;
+        }
+        .file-drop__text {
+            flex-grow: 1;
+        }
+        .file-drop__label {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.9rem;
+        }
+        .file-drop__hint {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            margin-top: 0.15rem;
+        }
+        .file-drop__name {
+            font-size: 0.82rem;
+            color: #8ce6d8;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .char-counter {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            text-align: right;
+            margin-top: 0.3rem;
+        }
+
+        .char-counter.near-limit { color: #f5c842; }
+        .char-counter.at-limit   { color: #f08080; }
+
+        @media (max-width: 767.98px) {
+            .internship-hero {
+                padding-top: calc(var(--fs-nav-height) + 3rem);
+                padding-bottom: 4rem;
+            }
+
+            .apply-form-wrap {
+                padding: 1.75rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" aria-label="Primary navigation">
+        <div class="container">
+            <a class="navbar-brand" href="/" aria-label="Flying Squirrel home">
+                <img src="../main/dist/assets/img/FS_logo_text.svg" width="140" height="60" alt="Flying Squirrel logo">
+            </a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#projects">Projects</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#capabilities">Capabilities</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#publications">Publications</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#mission-proven">Missions</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <header class="internship-hero">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-lg-9">
+                        <div class="internship-hero__badge">
+                            <i class="fa-solid fa-flask-vial"></i>
+                            Open Position
+                        </div>
+                        <h1>BEAST <span>Internship</span></h1>
+                        <p class="lead">Master's-level engineering internship at the NASA Ames Research Center Arc-Jet Complex. 10 weeks building the data backbone for next-generation hypersonic test campaigns.</p>
+                        <div class="internship-meta">
+                            <div class="internship-meta__item">
+                                <i class="fa-solid fa-building-columns"></i>
+                                NASA Ames Research Center
+                            </div>
+                            <div class="internship-meta__item">
+                                <i class="fa-solid fa-calendar"></i>
+                                10 Weeks
+                            </div>
+                            <div class="internship-meta__item">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                Oct – Nov 2025
+                            </div>
+                            <div class="internship-meta__item">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                Master's Student
+                            </div>
+                            <div class="internship-meta__item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                Moffett Field, CA
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a class="btn btn-primary btn-xl px-4 py-3" href="#apply">Apply Now</a>
+                            <a class="btn btn-outline-light btn-xl px-4 py-3" href="#tasks">View Tasks</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Overview -->
+        <section class="page-section" id="overview">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="text-center mb-5">
+                            <h2 class="page-section-heading text-uppercase text-secondary mb-3">About BEAST</h2>
+                        </div>
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-4 text-center">
+                                <img src="../main/dist/assets/img/portfolio/beat_project.svg" alt="BEAST logo" class="img-fluid" style="max-width: 180px;" loading="lazy" decoding="async">
+                            </div>
+                            <div class="col-md-8">
+                                <p style="color: var(--fs-muted); font-size: 1.06rem; line-height: 1.7;">
+                                    <strong style="color: var(--fs-ink);">BEAST</strong> (Big-data Efficient Automated Science Transfer) is a Django-based web application that centralizes arc-jet facility data: test campaigns, diagnostic time-series, material properties, facility configurations, and ML-based predictions.
+                                </p>
+                                <p style="color: var(--fs-muted); font-size: 1.06rem; line-height: 1.7;">
+                                    The intern will focus on HDF5 as the reference data interchange format — its self-describing, compressed, hierarchical structure makes it well-suited for large multi-channel diagnostic datasets typical of arc-jet testing. Work spans data engineering, automated reporting, technical documentation, and machine learning.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row g-3 mt-2">
+                            <div class="col-sm-4">
+                                <div class="feature-card h-100 text-center p-3">
+                                    <i class="fa-solid fa-database feature-card__icon"></i>
+                                    <h3 class="h6 mb-1">Data Engineering</h3>
+                                    <p class="mb-0" style="font-size:0.88rem; color:var(--fs-muted);">HDF5 import/export pipelines for arc-jet diagnostic datasets.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="feature-card h-100 text-center p-3">
+                                    <i class="fa-solid fa-file-pdf feature-card__icon"></i>
+                                    <h3 class="h6 mb-1">Automated Reporting</h3>
+                                    <p class="mb-0" style="font-size:0.88rem; color:var(--fs-muted);">LaTeX-based PDF reports generated directly from test data.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="feature-card h-100 text-center p-3">
+                                    <i class="fa-solid fa-brain feature-card__icon"></i>
+                                    <h3 class="h6 mb-1">Machine Learning</h3>
+                                    <p class="mb-0" style="font-size:0.88rem; color:var(--fs-muted);">Regression models predicting heat flux and enthalpy from test diagnostics.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tasks -->
+        <section class="page-section" id="tasks">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="page-section-heading text-uppercase text-secondary mb-3">Internship Tasks</h2>
+                    <p class="section-lead">Four structured deliverables across 10 weeks, each ending with a concrete, reviewable artifact.</p>
+                </div>
+                <div class="row g-4">
+
+                    <div class="col-md-6">
+                        <div class="task-card h-100">
+                            <div class="d-flex align-items-start gap-3 mb-2">
+                                <div class="task-card__number">1</div>
+                                <div>
+                                    <span class="task-card__weeks">Weeks 1 – 3</span>
+                                    <h3>HDF5 Import &amp; Export</h3>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Design the BEAST HDF5 schema</li>
+                                <li>Implement import &amp; export views</li>
+                                <li>Write round-trip unit tests</li>
+                            </ul>
+                            <div class="task-card__deliverable">
+                                <strong>Deliverable:</strong> Merged PR with passing tests.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="task-card h-100">
+                            <div class="d-flex align-items-start gap-3 mb-2">
+                                <div class="task-card__number">2</div>
+                                <div>
+                                    <span class="task-card__weeks">Weeks 4 – 5</span>
+                                    <h3>Automated Reporting</h3>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Extend the existing LaTeX report template</li>
+                                <li>Add a <code>generate_report</code> management command</li>
+                                <li>Wire a Generate Report button on the test-detail page</li>
+                            </ul>
+                            <div class="task-card__deliverable">
+                                <strong>Deliverable:</strong> Command produces a signed-off PDF.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="task-card h-100">
+                            <div class="d-flex align-items-start gap-3 mb-2">
+                                <div class="task-card__number">3</div>
+                                <div>
+                                    <span class="task-card__weeks">Weeks 6 – 7</span>
+                                    <h3>User Manual</h3>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Add an HDF5 Data Exchange section</li>
+                                <li>Fill remaining placeholder sections</li>
+                                <li>Document API endpoints and data models</li>
+                            </ul>
+                            <div class="task-card__deliverable">
+                                <strong>Deliverable:</strong> Signed-off PDF in <code>docs/</code>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="task-card h-100">
+                            <div class="d-flex align-items-start gap-3 mb-2">
+                                <div class="task-card__number">4</div>
+                                <div>
+                                    <span class="task-card__weeks">Weeks 8 – 10</span>
+                                    <h3>Predictive Modeling</h3>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Select a target variable (e.g. heat flux or enthalpy)</li>
+                                <li>Compare Linear Regression and Random Forest</li>
+                                <li>Deploy predictions on run pages</li>
+                            </ul>
+                            <div class="task-card__deliverable">
+                                <strong>Deliverable:</strong> Live model + performance metrics report.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <!-- Requirements -->
+        <section class="page-section" id="requirements">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="page-section-heading text-uppercase text-secondary mb-3">Who We're Looking For</h2>
+                    <p class="section-lead">A master's student in engineering or computer science with a hands-on mindset and interest in aerospace data systems.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="req-card h-100">
+                            <i class="fa-solid fa-graduation-cap req-card__icon"></i>
+                            <h3 class="h5">Academic Background</h3>
+                            <ul>
+                                <li>Enrolled in a <strong>Master's program</strong> in engineering, computer science, data science, or a related field</li>
+                                <li>Coursework in software development, data management, or scientific computing</li>
+                                <li>Background in aerospace, fluid dynamics, or materials science is a plus</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="req-card h-100">
+                            <i class="fa-solid fa-code req-card__icon"></i>
+                            <h3 class="h5">Technical Skills</h3>
+                            <ul>
+                                <li>Proficiency in <strong>Python</strong> and <strong>Django</strong></li>
+                                <li>Experience with data formats and scientific computing libraries (NumPy, pandas, h5py)</li>
+                                <li>Familiarity with <strong>Git</strong> and collaborative development workflows</li>
+                                <li>Basic knowledge of machine learning (scikit-learn or equivalent)</li>
+                                <li>LaTeX experience is helpful but not required</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="req-card h-100">
+                            <i class="fa-solid fa-lightbulb req-card__icon"></i>
+                            <h3 class="h5">Soft Skills &amp; Mindset</h3>
+                            <ul>
+                                <li>Motivated self-starter who can manage a structured multi-week project</li>
+                                <li>Clear written and verbal communication — deliverables are documented and reviewed</li>
+                                <li>Comfortable working in a research environment with evolving requirements</li>
+                                <li>Curiosity about hypersonic testing and thermal protection materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apply -->
+        <section class="page-section apply-section text-white" id="apply">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="page-section-heading text-uppercase mb-3">Apply</h2>
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <p style="color:rgba(240,247,255,0.82); max-width:620px; margin:0 auto; font-size:1.05rem;">
+                        Fill out the form below and we'll be in touch. Applications are reviewed on a rolling basis.
+                    </p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form id="apply-form" class="apply-form-wrap" novalidate
+                              action="https://formspree.io/f/mnjryyqk" method="POST" enctype="multipart/form-data">
+
+                            <!-- Success state -->
+                            <div id="form-success">
+                                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                <h3>Application Received!</h3>
+                                <p>Thank you for applying. We'll review your application and get back to you soon at the email address you provided.</p>
+                            </div>
+
+                            <!-- Form fields (hidden on success) -->
+                            <div id="form-fields">
+
+                                <p class="form-section-label">Personal Information</p>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-sm-6">
+                                        <label for="first-name">First Name <span class="text-danger">*</span></label>
+                                        <input type="text" id="first-name" name="first_name" class="form-control" placeholder="Jane" required autocomplete="given-name">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="last-name">Last Name <span class="text-danger">*</span></label>
+                                        <input type="text" id="last-name" name="last_name" class="form-control" placeholder="Smith" required autocomplete="family-name">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email">Email Address <span class="text-danger">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="jane.smith@university.edu" required autocomplete="email">
+                                </div>
+
+                                <p class="form-section-label mt-4">Academic Background</p>
+                                <div class="mb-3">
+                                    <label for="institution">University / Institution <span class="text-danger">*</span></label>
+                                    <input type="text" id="institution" name="institution" class="form-control" placeholder="e.g. ISAE SUPAERO" required>
+                                </div>
+                                <div class="row g-3 mb-3">
+                                    <div class="col-sm-8">
+                                        <label for="program">Current Program / Degree <span class="text-danger">*</span></label>
+                                        <input type="text" id="program" name="program" class="form-control" placeholder="e.g. MSc Aerospace Engineering" required>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="graduation">Expected Graduation <span class="text-danger">*</span></label>
+                                        <input type="month" id="graduation" name="expected_graduation" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <p class="form-section-label mt-4">Your Application</p>
+                                <div class="mb-3">
+                                    <label for="statement">Statement of Interest <span class="text-danger">*</span></label>
+                                    <textarea id="statement" name="statement" class="form-control" rows="5"
+                                              placeholder="Tell us why you're interested in BEAST, what relevant experience you have, and what you hope to gain from this internship. (max 1500 characters)"
+                                              maxlength="1500" required></textarea>
+                                    <div class="char-counter" id="statement-counter">0 / 1500</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>CV / Resume <span class="text-danger">*</span></label>
+                                    <div class="file-drop" id="cv-drop">
+                                        <input type="file" id="cv-file" name="cv" accept=".pdf" required>
+                                        <i class="fa-solid fa-file-pdf file-drop__icon"></i>
+                                        <div class="file-drop__text">
+                                            <div class="file-drop__label">Click to upload your CV</div>
+                                            <div class="file-drop__hint">PDF only · max 5 MB</div>
+                                            <div class="file-drop__name" id="cv-name"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label>Motivation Letter</label>
+                                    <div class="file-drop" id="ml-drop">
+                                        <input type="file" id="ml-file" name="motivation_letter" accept=".pdf">
+                                        <i class="fa-solid fa-file-lines file-drop__icon"></i>
+                                        <div class="file-drop__text">
+                                            <div class="file-drop__label">Click to upload your motivation letter</div>
+                                            <div class="file-drop__hint">PDF only · max 5 MB · optional</div>
+                                            <div class="file-drop__name" id="ml-name"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="github">GitHub / Portfolio URL</label>
+                                    <input type="url" id="github" name="github_url" class="form-control" placeholder="https://github.com/yourhandle">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="heard">How did you hear about this position?</label>
+                                    <select id="heard" name="heard_from" class="form-select">
+                                        <option value="" disabled selected>Select one</option>
+                                        <option>LinkedIn</option>
+                                        <option>University career center</option>
+                                        <option>Word of mouth / colleague</option>
+                                        <option>flying-squirrel.space</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+
+                                <!-- Honeypot anti-spam field (hidden) -->
+                                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                                <div id="form-error-msg" role="alert">
+                                    <i class="fa-solid fa-circle-exclamation me-2"></i>
+                                    Something went wrong. Please try again or email us directly at
+                                    <a href="mailto:alex@flying-squirrel.space" style="color:#ffb3b3;">alex@flying-squirrel.space</a>.
+                                </div>
+
+                                <button type="submit" id="submit-btn" class="btn btn-primary w-100 py-3 mt-2">
+                                    <span id="submit-label">
+                                        <i class="fa-solid fa-paper-plane me-2"></i>Submit Application
+                                    </span>
+                                    <span id="submit-spinner" style="display:none;">
+                                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                        Sending…
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Alternative contact -->
+                        <div class="row g-3 mt-4">
+                            <div class="col-sm-6">
+                                <div class="apply-card h-100">
+                                    <div class="apply-card__icon"><i class="fa-solid fa-envelope"></i></div>
+                                    <h3 class="h6">Prefer email?</h3>
+                                    <a href="mailto:alex@flying-squirrel.space?subject=BEAST%20Internship%20Application">alex@flying-squirrel.space</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="apply-card h-100">
+                                    <div class="apply-card__icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                    <h3 class="h6">Connect on LinkedIn</h3>
+                                    <a href="https://www.linkedin.com/in/alexandre-quintart-439a2211b" target="_blank" rel="noopener">Alexandre Quintart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer text-white">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-partner-block">
+                    <p class="footer-social__text mb-0">Proudly a member of</p>
+                    <a class="footer-partner" href="https://www.onepercentfortheplanet.org/" target="_blank" rel="noopener" aria-label="1% for the Planet">
+                        <img src="../main/dist/assets/img/one_percent/1ftp_Primary_Horizontal_White.png" alt="1% for the Planet logo" loading="lazy" decoding="async">
+                    </a>
+                </div>
+                <div class="footer-brand">
+                    <img src="../main/dist/assets/img/FS_logo_text.svg" alt="Flying Squirrel wordmark" class="footer-logo" loading="lazy" decoding="async">
+                    <p class="mb-0">Aerospace engineers building data-rich tooling for hypersonic testing and thermal protection breakthroughs.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Stay Connected</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:alex@flying-squirrel.space">alex@flying-squirrel.space</a></li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:+41767830669">+41&nbsp;767&nbsp;83&nbsp;06&nbsp;69</a> (Europe)</li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:+16046741353">+1&nbsp;604&nbsp;674&nbsp;1353</a> (North&nbsp;America)</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4 class="footer-heading">Follow Our Work</h4>
+                    <p class="footer-social__text">Lab automation notes and open-source releases.</p>
+                    <div class="footer-social__list">
+                        <a class="footer-social__link" href="https://github.com/alexandrequ" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="footer-social__link" href="https://www.linkedin.com/in/alexandre-quintart-439a2211b" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-fw fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright text-white">
+        <div class="container">
+            <small>&copy; 2026 Flying Squirrel &middot; Alexandre Quintart</small>
+        </div>
+    </div>
+
+    <script src="../main/dist/js/scripts.js"></script>
+    <script>
+        // File name display for upload fields
+        function wireFileDrop(inputId, nameId, dropId) {
+            const input = document.getElementById(inputId);
+            const nameEl = document.getElementById(nameId);
+            const drop = document.getElementById(dropId);
+            if (!input) return;
+            input.addEventListener('change', () => {
+                const file = input.files[0];
+                if (file) {
+                    nameEl.textContent = file.name;
+                    nameEl.style.display = 'block';
+                    drop.style.borderColor = 'rgba(140,230,216,0.55)';
+                } else {
+                    nameEl.style.display = 'none';
+                    drop.style.borderColor = '';
+                }
+            });
+        }
+        wireFileDrop('cv-file', 'cv-name', 'cv-drop');
+        wireFileDrop('ml-file', 'ml-name', 'ml-drop');
+
+        // Character counter for statement textarea
+        const statement = document.getElementById('statement');
+        const counter   = document.getElementById('statement-counter');
+        if (statement && counter) {
+            statement.addEventListener('input', () => {
+                const len = statement.value.length;
+                counter.textContent = `${len} / 1500`;
+                counter.className = 'char-counter' +
+                    (len >= 1500 ? ' at-limit' : len >= 1300 ? ' near-limit' : '');
+            });
+        }
+
+        // Formspree AJAX submission
+        const form        = document.getElementById('apply-form');
+        const fields      = document.getElementById('form-fields');
+        const success     = document.getElementById('form-success');
+        const errorMsg    = document.getElementById('form-error-msg');
+        const submitBtn   = document.getElementById('submit-btn');
+        const submitLabel = document.getElementById('submit-label');
+        const submitSpinner = document.getElementById('submit-spinner');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                if (!form.checkValidity()) {
+                    form.classList.add('was-validated');
+                    form.querySelector(':invalid')?.focus();
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitLabel.style.display = 'none';
+                submitSpinner.style.display = 'inline';
+                errorMsg.style.display = 'none';
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: 'POST',
+                        body: new FormData(form),
+                        headers: { Accept: 'application/json' }
+                    });
+                    if (res.ok) {
+                        fields.style.display = 'none';
+                        success.style.display = 'block';
+                    } else {
+                        throw new Error('Server error');
+                    }
+                } catch {
+                    errorMsg.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitLabel.style.display = 'inline';
+                    submitSpinner.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
