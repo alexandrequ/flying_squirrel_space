@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Share your feedback on the BEAST live demo at the Ablation Workshop — 2 minutes, helps us prioritize what we build next.">
+    <meta name="author" content="Flying Squirrel">
+    <meta name="robots" content="noindex, nofollow">
+    <title>BEAST Demo Feedback — Ablation Workshop | Flying Squirrel</title>
+    <link rel="icon" type="image/x-icon" href="../main/dist/assets/favicon.ico">
+    <link rel="canonical" href="https://flying-squirrel.space/beast-feedback/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://use.fontawesome.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BEAST Demo Feedback — Ablation Workshop | Flying Squirrel">
+    <meta property="og:description" content="You just saw BEAST live. Tell us what you thought — 2 minutes.">
+    <meta property="og:url" content="https://flying-squirrel.space/beast-feedback/">
+    <meta property="og:image" content="https://flying-squirrel.space/main/dist/FS_logo_2025.png">
+    <meta property="og:site_name" content="Flying Squirrel">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFMS1NFJKJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CFMS1NFJKJ');
+    </script>
+    <script src="https://use.fontawesome.com/releases/v6.2.0/js/all.js" crossorigin="anonymous" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="../main/dist/css/styles.css" rel="stylesheet">
+    <link href="../main/dist/css/custom.css" rel="stylesheet">
+    <style>
+        /* Page-specific overrides */
+        .feedback-hero {
+            position: relative;
+            padding-top: calc(var(--fs-nav-height) + 6rem);
+            padding-bottom: 6rem;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(25, 163, 140, 0.28) 0%, rgba(25, 163, 140, 0) 42%),
+                radial-gradient(circle at 88% 15%, rgba(245, 139, 39, 0.22) 0%, rgba(245, 139, 39, 0) 40%),
+                linear-gradient(160deg, #0a1422 0%, #122039 55%, #183050 100%);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .feedback-hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(25, 163, 140, 0.18);
+            border: 1px solid rgba(25, 163, 140, 0.38);
+            color: #8ce6d8;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+        }
+
+        .feedback-hero h1 {
+            font-size: clamp(2rem, 5.5vw, 3.4rem);
+            line-height: 1.15;
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .feedback-hero h1 span {
+            color: #8ce6d8;
+        }
+
+        .feedback-hero .lead {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .feedback-cta {
+            margin-top: 2.5rem;
+        }
+
+        .feedback-cta .btn-primary {
+            font-size: 1.1rem;
+            box-shadow: 0 18px 40px rgba(25, 163, 140, 0.35);
+        }
+
+        .feedback-cta__note {
+            display: block;
+            margin-top: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        .native-form-card {
+            background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+            border: 1px solid var(--fs-line);
+            border-radius: 1.25rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 18px 40px rgba(11, 22, 40, 0.1);
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 0.35rem;
+        }
+
+        .star-rating input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .star-rating label {
+            font-size: 2.1rem;
+            color: #d8dee9;
+            cursor: pointer;
+            transition: color 0.15s ease, transform 0.15s ease;
+        }
+
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #f58b27;
+        }
+
+        .star-rating label:hover {
+            transform: scale(1.1);
+        }
+
+        .rating-labels {
+            display: flex;
+            justify-content: space-between;
+            max-width: 168px;
+            color: var(--fs-muted);
+            font-size: 0.8rem;
+            margin-top: 0.35rem;
+        }
+
+        #feedback-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        #feedback-success .success-icon {
+            font-size: 3rem;
+            color: #0f7f6c;
+            margin-bottom: 1rem;
+        }
+
+        #feedback-success h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        #feedback-success p {
+            color: var(--fs-muted);
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        #feedback-error-msg {
+            display: none;
+            background: rgba(220, 53, 69, 0.08);
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            color: #a02030;
+            border-radius: 0.75rem;
+            padding: 0.85rem 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .ask-card {
+            background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
+            border: 1px solid var(--fs-line);
+            border-radius: 1.25rem;
+            padding: 1.75rem 1.5rem;
+            height: 100%;
+            box-shadow: 0 18px 40px rgba(11, 22, 40, 0.07);
+        }
+
+        .ask-card__icon {
+            font-size: 1.6rem;
+            color: #0f7f6c;
+            margin-bottom: 0.9rem;
+        }
+
+        .ask-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ask-card p {
+            color: var(--fs-muted);
+            font-size: 0.92rem;
+            margin: 0;
+            line-height: 1.55;
+        }
+
+        #contact.contact-section {
+            background:
+                radial-gradient(circle at 15% 5%, rgba(25, 163, 140, 0.2) 0%, rgba(25, 163, 140, 0) 40%),
+                radial-gradient(circle at 88% 15%, rgba(245, 139, 39, 0.22) 0%, rgba(245, 139, 39, 0) 44%),
+                linear-gradient(145deg, #111b2f 0%, #172844 52%, #20345a 100%);
+        }
+
+        .apply-card {
+            background: linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.09) 100%);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 1.25rem;
+            padding: 2rem 1.75rem;
+            color: #fff;
+        }
+
+        .apply-card__icon {
+            font-size: 1.75rem;
+            color: #8ce6d8;
+            margin-bottom: 1rem;
+        }
+
+        .apply-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .apply-card p {
+            color: rgba(240, 247, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .apply-card a {
+            color: #8ce6d8;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .apply-card a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav" aria-label="Primary navigation">
+        <div class="container">
+            <a class="navbar-brand" href="/" aria-label="Flying Squirrel home">
+                <img src="../main/dist/assets/img/FS_logo_text.svg" width="140" height="60" alt="Flying Squirrel logo">
+            </a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#projects">Projects</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#capabilities">Capabilities</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#publications">Publications</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#mission-proven">Missions</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- Hero -->
+        <header class="feedback-hero">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <div class="feedback-hero__badge">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            Ablation Workshop &middot; Live Demo Feedback
+                        </div>
+                        <h1>Tell us what you thought of the <span>BEAST demo</span></h1>
+                        <p class="lead">You just saw BEAST — our open data infrastructure for arc-jet facilities — in action. Your feedback takes about 2 minutes and directly shapes what we build next.</p>
+                        <div class="feedback-cta">
+                            <a class="btn btn-outline-light btn-xl px-4 py-3" href="#feedback-form">
+                                <i class="fa-solid fa-arrow-down me-2"></i>Give Feedback Below
+                            </a>
+                            <span class="feedback-cta__note">Takes about 2 minutes &middot; anonymous unless you choose to share contact info</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Feedback form (native, submits directly to Formbricks) -->
+        <section class="page-section" id="feedback-form">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <form id="feedback-form-el" class="native-form-card" novalidate>
+
+                            <!-- Success state -->
+                            <div id="feedback-success">
+                                <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+                                <h3>Thank you!</h3>
+                                <p>Your feedback is valuable and will help us improve BEAST.</p>
+                            </div>
+
+                            <!-- Form fields (hidden on success) -->
+                            <div id="feedback-fields">
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold">Overall, how would you rate the BEAST demo? <span class="text-danger">*</span></label>
+                                    <div class="star-rating" id="star-rating">
+                                        <input type="radio" name="rating" id="star5" value="5" required><label for="star5" aria-label="5 stars"><i class="fa-solid fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star4" value="4"><label for="star4" aria-label="4 stars"><i class="fa-solid fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star3" value="3"><label for="star3" aria-label="3 stars"><i class="fa-solid fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star2" value="2"><label for="star2" aria-label="2 stars"><i class="fa-solid fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star1" value="1"><label for="star1" aria-label="1 star"><i class="fa-solid fa-star"></i></label>
+                                    </div>
+                                    <div class="rating-labels"><span>Very poor</span><span>Excellent</span></div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="q-worked-well" class="form-label fw-semibold">What worked well? <span class="text-danger">*</span></label>
+                                    <textarea id="q-worked-well" class="form-control" rows="3" placeholder="Your comments here..." required></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="q-improve" class="form-label fw-semibold">What could be improved? <span class="text-danger">*</span></label>
+                                    <textarea id="q-improve" class="form-control" rows="3" placeholder="Your suggestions here..." required></textarea>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold d-block">Would you use BEAST in your own lab? <span class="text-danger">*</span></label>
+                                    <input type="radio" class="btn-check" name="use-beast" id="use-oui" value="Oui" autocomplete="off" required>
+                                    <label class="btn btn-outline-secondary me-2" for="use-oui">Yes</label>
+                                    <input type="radio" class="btn-check" name="use-beast" id="use-non" value="Non" autocomplete="off">
+                                    <label class="btn btn-outline-secondary me-2" for="use-non">No</label>
+                                    <input type="radio" class="btn-check" name="use-beast" id="use-peutetre" value="Peut-être" autocomplete="off">
+                                    <label class="btn btn-outline-secondary" for="use-peutetre">Maybe</label>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="q-email" class="form-label fw-semibold">Your email, if you'd like to know when BEAST goes open-source</label>
+                                    <input type="email" id="q-email" class="form-control" placeholder="you@example.com">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="q-other" class="form-label fw-semibold">Anything else you'd like to share?</label>
+                                    <textarea id="q-other" class="form-control" rows="2" placeholder="Any additional comments..."></textarea>
+                                </div>
+
+                                <div id="feedback-error-msg" role="alert">
+                                    <i class="fa-solid fa-circle-exclamation me-2"></i>
+                                    Something went wrong. Please try again or email us directly at
+                                    <a href="mailto:alex@flying-squirrel.space">alex@flying-squirrel.space</a>.
+                                </div>
+
+                                <button type="submit" id="feedback-submit-btn" class="btn btn-primary w-100 py-3">
+                                    <span id="feedback-submit-label"><i class="fa-solid fa-paper-plane me-2"></i>Submit</span>
+                                    <span id="feedback-submit-spinner" style="display:none;">
+                                        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                        Sending…
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alternative contact -->
+        <section class="page-section contact-section text-white" id="contact">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="page-section-heading text-uppercase mb-3">Prefer To Just Talk?</h2>
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fa-solid fa-comments"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center g-3">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="apply-card h-100">
+                            <div class="apply-card__icon"><i class="fa-solid fa-envelope"></i></div>
+                            <h3 class="h6">Prefer email?</h3>
+                            <a href="mailto:alex@flying-squirrel.space?subject=BEAST%20Demo%20Feedback%20-%20Ablation%20Workshop">alex@flying-squirrel.space</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="apply-card h-100">
+                            <div class="apply-card__icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <h3 class="h6">Connect on LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/alexandre-quintart-439a2211b" target="_blank" rel="noopener">Alexandre Quintart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer text-white">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-partner-block">
+                    <p class="footer-social__text mb-0">Proudly a member of</p>
+                    <a class="footer-partner" href="https://www.onepercentfortheplanet.org/" target="_blank" rel="noopener" aria-label="1% for the Planet">
+                        <img src="../main/dist/assets/img/one_percent/1ftp_Primary_Horizontal_White.png" alt="1% for the Planet logo" loading="lazy" decoding="async">
+                    </a>
+                </div>
+                <div class="footer-brand">
+                    <img src="../main/dist/assets/img/FS_logo_text.svg" alt="Flying Squirrel wordmark" class="footer-logo" loading="lazy" decoding="async">
+                    <p class="mb-0">Aerospace engineers building data-rich tooling for hypersonic testing and thermal protection breakthroughs.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Stay Connected</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fa-solid fa-envelope"></i><a href="mailto:alex@flying-squirrel.space">alex@flying-squirrel.space</a></li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:+41767830669">+41&nbsp;767&nbsp;83&nbsp;06&nbsp;69</a> (Europe)</li>
+                        <li><i class="fa-solid fa-phone"></i><a href="tel:+16046741353">+1&nbsp;604&nbsp;674&nbsp;1353</a> (North&nbsp;America)</li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4 class="footer-heading">Follow Our Work</h4>
+                    <p class="footer-social__text">Lab automation notes and open-source releases.</p>
+                    <div class="footer-social__list">
+                        <a class="footer-social__link" href="https://github.com/alexandrequ" target="_blank" rel="noopener" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a class="footer-social__link" href="https://www.linkedin.com/in/alexandre-quintart-439a2211b" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="fab fa-fw fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright text-white">
+        <div class="container">
+            <small>&copy; 2026 Flying Squirrel &middot; Alexandre Quintart</small>
+        </div>
+    </div>
+
+    <script src="../main/dist/js/scripts.js"></script>
+    <script>
+        // Native submission straight to Formbricks (no iframe)
+        const FORMBRICKS_WORKSPACE_ID = 'cmthmimwv6nhp01ulu2xpo8e0';
+        const FORMBRICKS_SURVEY_ID    = 'cmthmqt0r9ysn01wxhj94ow47';
+        const FORMBRICKS_ENDPOINT     = `https://app.formbricks.com/api/v1/client/${FORMBRICKS_WORKSPACE_ID}/responses`;
+
+        const feedbackForm    = document.getElementById('feedback-form-el');
+        const feedbackFields  = document.getElementById('feedback-fields');
+        const feedbackSuccess = document.getElementById('feedback-success');
+        const feedbackError   = document.getElementById('feedback-error-msg');
+        const submitBtn       = document.getElementById('feedback-submit-btn');
+        const submitLabel     = document.getElementById('feedback-submit-label');
+        const submitSpinner   = document.getElementById('feedback-submit-spinner');
+
+        if (feedbackForm) {
+            feedbackForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const rating   = feedbackForm.querySelector('input[name="rating"]:checked');
+                const useBeast = feedbackForm.querySelector('input[name="use-beast"]:checked');
+                const worked   = document.getElementById('q-worked-well');
+                const improve  = document.getElementById('q-improve');
+                const email    = document.getElementById('q-email');
+                const other    = document.getElementById('q-other');
+
+                if (!feedbackForm.checkValidity() || !rating || !useBeast) {
+                    feedbackForm.classList.add('was-validated');
+                    feedbackForm.querySelector(':invalid')?.focus();
+                    return;
+                }
+
+                const data = {
+                    q_1_ca8j4he3: Number(rating.value),
+                    q_2_j2dq5f0o: worked.value.trim(),
+                    q_3_uvo9uke7: improve.value.trim(),
+                    q_4_igigfg6j: useBeast.value
+                };
+                if (email.value.trim()) data.q_5_tn062c9r = email.value.trim();
+                if (other.value.trim()) data.q_6_y8rmlbj4 = other.value.trim();
+
+                submitBtn.disabled = true;
+                submitLabel.style.display = 'none';
+                submitSpinner.style.display = 'inline';
+                feedbackError.style.display = 'none';
+
+                try {
+                    const res = await fetch(FORMBRICKS_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            surveyId: FORMBRICKS_SURVEY_ID,
+                            data,
+                            finished: true
+                        })
+                    });
+                    if (res.ok) {
+                        feedbackFields.style.display = 'none';
+                        feedbackSuccess.style.display = 'block';
+
+                        setTimeout(() => {
+                            feedbackForm.reset();
+                            feedbackForm.classList.remove('was-validated');
+                            submitBtn.disabled = false;
+                            submitLabel.style.display = 'inline';
+                            submitSpinner.style.display = 'none';
+                            feedbackSuccess.style.display = 'none';
+                            feedbackFields.style.display = 'block';
+                        }, 5000);
+                    } else {
+                        throw new Error('Server error');
+                    }
+                } catch {
+                    feedbackError.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitLabel.style.display = 'inline';
+                    submitSpinner.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
