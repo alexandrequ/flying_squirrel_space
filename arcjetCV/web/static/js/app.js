@@ -42,7 +42,10 @@
   async function api(url, body, opts = {}) {
     const init = body === undefined ? {} : { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) };
     Object.assign(init, opts);
-    if (HOSTED && ENG.token) init.headers = Object.assign({}, init.headers, { "X-ArcjetCV-Token": ENG.token });
+    if (HOSTED) {
+      init.targetAddressSpace = "loopback"; // Chrome local network access: the engine is on this computer
+      if (ENG.token) init.headers = Object.assign({}, init.headers, { "X-ArcjetCV-Token": ENG.token });
+    }
     let res;
     try { res = await fetch(engineBase() + url, init); }
     catch (e) {
